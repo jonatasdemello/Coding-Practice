@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo</title>
+<style>
+a.test {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+	 - 
+	<a href="#">Blank</a>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+ 
+    // Your code goes here.
+	/*
+	 window.onload = function() {
+		alert( "welcome" );
+	 };
+	*/
+/*
+$( document ).ready(function() {
+ 
+    $( "a" ).click(function( event ) {
+ 
+        alert( "Thanks for visiting!" );
+ 
+    });
+ 
+});
+*/
+$( document ).ready(function() {
+     $( "a" ).click(function( event ) {
+         alert( "As you can see, the link no longer took you to jquery.com" );
+         event.preventDefault();
+		 $( this ).hide( "slow" );
+     });
+ });
+
+ $( "a" ).addClass( "test" );
+ 
+ //$( "a" ).removeClass( "test" );
+ 
+ $.get( "myhtmlpage.html", myCallBack );
+ 
+// When $.get() finishes getting the page myhtmlpage.html, it executes the myCallBack() function.
+// Note: The second parameter here is simply the function name (but not as a string, and without parentheses).
+ 
+ function myCallBack() {
+	alter("Callback!");
+ }
+ 
+ /* this will not work
+ 
+$.get( "myhtmlpage.html", myCallBack( param1, param2 ) );
+
+The reason this fails is that the code executes myCallBack( param1, param2 ) immediately 
+and then passes myCallBack()'s return value as the second parameter to $.get(). 
+We actually want to pass the function myCallBack(), not myCallBack( param1, param2 )'s 
+return value (which might or might not be a function). 
+So, how to pass in myCallBack() and include its arguments?
+
+To defer executing myCallBack() with its parameters, you can use an anonymous function as a wrapper. 
+Note the use of function() {. 
+The anonymous function does exactly one thing: calls myCallBack(), with the values of param1 and param2.
+
+$.get( "myhtmlpage.html", function() {
+     myCallBack( param1, param2 );
+ });
+ 
+ 
+When $.get() finishes getting the page myhtmlpage.html, 
+it executes the anonymous function, which executes myCallBack( param1, param2 ).
+
+*/
+ 
+    </script>
+</body>
+</html>
