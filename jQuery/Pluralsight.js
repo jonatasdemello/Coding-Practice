@@ -166,6 +166,30 @@ $('div[title="Title"]');
 	https://app.pluralsight.com/library/courses/jquery-fundamentals/table-of-contents
 */
 
+// Three simple, but useful, jQuery methods for DOM manipulation are:
+// 	text() - Sets or returns the text content of selected elements
+// 	html() - Sets or returns the content of selected elements (including HTML markup)
+// 	val() - Sets or returns the value of form fields
+// 	attr() method is also used to set/change attribute values.
+
+$("#test").text();
+$("#test").html();
+$("#test").val();
+$("#test").attr("val")
+
+$("#btn1").click(function () {
+    $("#test1").text("Hello world!");
+});
+$("#btn2").click(function () {
+    $("#test2").html("<b>Hello world!</b>");
+});
+$("#btn3").click(function () {
+    $("#test3").val("Dolly Duck");
+});
+$("button").click(function () {
+    $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+});
+
 // $('div').each(function(index, Element){});
 
 $('div').each(function (index) {
@@ -193,7 +217,6 @@ $('img').attr({
     style: 'border: 2px solid black;'
 });
 
-
 $('div.Blue').attr('title', 'My title');
 $('div.Blue').attr({
     'title': 'My title'
@@ -211,11 +234,21 @@ $("p").css({
     "font-size": "200%"
 });
 
+// Working with Classes:
+// *********************
+    // .addClass()
+    // .hasClass()
+    // .removeClass()
+    // .toggleClass()
 
-// .addClass()
-// .hasClass()
-// .removeClass()
-// .toggleClass()
+$('p').addClass('myClass');
+if($('p').hasClass('myClass')){
+    dostuff();
+};
+$('p').removeClass('myClass');
+$('p').addClass(); // remove all classes
+
+$('p').toggleClass('myClass');
 
 // Insert Nodes:
 // 	.append()
@@ -238,36 +271,116 @@ $('.state').wrap('<div class="US_State" />');
 // or
 $('.state').wrap('<div class="US_State"></div>');
 // will produce:
-// <div class="US_State">
-// 	<div class="state">Arizona</div>
-// </div>
+// <div class="US_State"><div class="state">Arizona</div><div>
 
+// remove element from DOM:
 $('.phone').remove();
 
 
-// Three simple, but useful, jQuery methods for DOM manipulation are:
+// Handling Events:
+// *****************
 
-// 	text() - Sets or returns the text content of selected elements
-// 	html() - Sets or returns the content of selected elements (including HTML markup)
-// 	val() - Sets or returns the value of form fields
-// 	attr() method is also used to set/change attribute values.
+myButton.addEventListener('click', function(){}, false);
+myButton.attachEvent('onclick', function(){}); // IE
 
-$("#test").text();
-$("#test").html();
-$("#test").val();
-$("#test").attr("val")
+// Mouse Events
+//     click()
+//     dblclick()
+//     mouseenter()
+//     mouseleave()
 
+// Keyboard Events
+//     keypress()
+//     keydown()
+//     keyup()
 
-$("#btn1").click(function () {
-    $("#test1").text("Hello world!");
+// Form Events
+//     submit()
+//     change()
+//     focus()
+//     blur()
+
+// Document/Window Events
+//     load()
+//     resize()
+//     scroll()
+//     unload()
+
+$('#btn').click(function(){
+    alert("test");
+})
+
+$(document).mousemove(function(event){ 
+    $("span").text("X: " + event.pageX + ", Y: " + event.pageY); 
 });
-$("#btn2").click(function () {
-    $("#test2").html("<b>Hello world!</b>");
-});
-$("#btn3").click(function () {
-    $("#test3").val("Dolly Duck");
+
+// .on(eventType, handler(eventObject))
+$("p").on("click", function(){
+    alert("The paragraph was clicked.");
 });
 
-$("button").click(function () {
-    $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+// .off(event) remove handler
+$('#test').click(handler);
+$('#test').off();   // remove all
+$('#test').off('click'); // only click
+
+
+// live() / die() delegate() on()
+// allow children to be added to a container without explicitly attaching an event handler to each child
+// .on() replaces: bind(), delegate(), live()
+
+$("#myTable tbody").on('click', 'td', function(event){
+    alert($(this).text());
 });
+
+$("#myTable tbody").on({
+    mouseenter: function(){
+        $(this).addClass('over');
+    },
+    mouseleave: function(){
+        $(this).removeClass('out');
+    }
+});
+
+// $(selector).hover(handlerIn, handlerOut)
+$('#target').hover(
+    function(){
+        $(this).css('background-color','red');
+    },
+    function(){
+        $(this).css('background-color','white');
+    }
+);
+
+$('#target').hover(function(){
+    $(this).toggleClass('over');
+});
+
+
+// Working with Ajax
+// ******************
+
+// $(selector).load(): loads HTML from server
+// $.get() and $.post(): get raw data from server
+// $.getJSON(): get/post and return JSON
+// $.ajax(): core funcionality
+
+// $(selector).load(url, data, callback)
+
+$('#myDiv').load("page.html #MainTOC");
+
+$('#myDiv').load("getCustomers.aspx", {pageSize: 25});
+
+$('#myDiv').load("getCustomers.aspx", {pageSize: 25}, function(response, status, xhr){
+    if(status == "error"){
+        alert(xht.statusText);
+    }
+});
+
+$.get(url, data, callback, datatype);
+$.getJSON(url, data, callback);
+$.post(url, data, callback, datatype);
+
+
+// using Fiddler:
+// instead of http://localhost:2708 use http://localhost.:2708  (dot in localhost)
