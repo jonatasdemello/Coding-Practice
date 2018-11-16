@@ -68,5 +68,9 @@ namespace CodingTest01
             return N; 
         }
 
+		// using Linq
+		//public int solution(int[] A) {
+		//	return A.Aggregate((x, y) => x ^ y);
+		//}
     }
 }
