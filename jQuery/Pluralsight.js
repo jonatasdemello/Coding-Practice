@@ -65,102 +65,6 @@ $('div[title="Title"]');
 
 // In addition to these methods, there are even more, including .prevUntil(), .nextUntil() and others. To get an idea, check out Mozilla Developer Network reference for jQuery Traversing.
 
-// $('div[title="Title"]')
-// $('div:eq(0)')		=> first div
-// $('div:contais("plural")') 	<div>expert plural</div> Case sensitive
-
-// $('tr:odd') - impar 1,3,5,7
-// $('td:even') -  par 0,2,4,6
-
-// $('span:first-child')
-
-// $('input[value^="events"]') starts with
-// $('input[value$="events"]') ends with
-// $('input[value*="events"]') contains
-
-// p	tag
-// #	id
-// .	class
-// ^	start
-// $	end
-// *	contains
-
-//    http://codylindley.com/jqueryselectors/
-//
-//
-//    jQuery Selectors
-//    https://www.w3schools.com/jquery/trysel.asp
-//
-//    Selector	Example	Selects
-//    *	$("*")	All elements
-//    #id	$("#lastname")	The element with id="lastname"
-//    .class	$(".intro")	All elements with class="intro"
-//    .class,.class	$(".intro,.demo")	All elements with the class "intro" or "demo"
-//    element	$("p")	All <p> elements
-//    el1,el2,el3	$("h1,div,p")	All <h1>, <div> and <p> elements
-//        
-//    :first	$("p:first")	The first <p> element
-//    :last	$("p:last")	The last <p> element
-//    :even	$("tr:even")	All even <tr> elements
-//    :odd	$("tr:odd")	All odd <tr> elements
-//        
-//    :first-child	$("p:first-child")	All <p> elements that are the first child of their parent
-//    :first-of-type	$("p:first-of-type")	All <p> elements that are the first <p> element of their parent
-//    :last-child	$("p:last-child")	All <p> elements that are the last child of their parent
-//    :last-of-type	$("p:last-of-type")	All <p> elements that are the last <p> element of their parent
-//    :nth-child(n)	$("p:nth-child(2)")	All <p> elements that are the 2nd child of their parent
-//    :nth-last-child(n)	$("p:nth-last-child(2)")	All <p> elements that are the 2nd child of their parent, counting from the last child
-//    :nth-of-type(n)	$("p:nth-of-type(2)")	All <p> elements that are the 2nd <p> element of their parent
-//    :nth-last-of-type(n)	$("p:nth-last-of-type(2)")	All <p> elements that are the 2nd <p> element of their parent, counting from the last child
-//    :only-child	$("p:only-child")	All <p> elements that are the only child of their parent
-//    :only-of-type	$("p:only-of-type")	All <p> elements that are the only child, of its type, of their parent
-//        
-//    parent > child	$("div > p")	All <p> elements that are a direct child of a <div> element
-//    parent descendant	$("div p")	All <p> elements that are descendants of a <div> element
-//    element + next	$("div + p")	The <p> element that are next to each <div> elements
-//    element ~ siblings	$("div ~ p")	All <p> elements that are siblings of a <div> element
-//        
-//    :eq(index)	$("ul li:eq(3)")	The fourth element in a list (index starts at 0)
-//    :gt(no)	$("ul li:gt(3)")	List elements with an index greater than 3
-//    :lt(no)	$("ul li:lt(3)")	List elements with an index less than 3
-//    :not(selector)	$("input:not(:empty)")	All input elements that are not empty
-//        
-//    :header	$(":header")	All header elements <h1>, <h2> ...
-//    :animated	$(":animated")	All animated elements
-//    :focus	$(":focus")	The element that currently has focus
-//    :contains(text)	$(":contains('Hello')")	All elements which contains the text "Hello"
-//    :has(selector)	$("div:has(p)")	All <div> elements that have a <p> element
-//    :empty	$(":empty")	All elements that are empty
-//    :parent	$(":parent")	All elements that are a parent of another element
-//    :hidden	$("p:hidden")	All hidden <p> elements
-//    :visible	$("table:visible")	All visible tables
-//    :root	$(":root")	The document's root element
-//    :lang(language)	$("p:lang(de)")	All <p> elements with a lang attribute value starting with "de"
-//        
-//    [attribute]	$("[href]")	All elements with a href attribute
-//    [attribute=value]	$("[href='default.htm']")	All elements with a href attribute value equal to "default.htm"
-//    [attribute!=value]	$("[href!='default.htm']")	All elements with a href attribute value not equal to "default.htm"
-//    [attribute$=value]	$("[href$='.jpg']")	All elements with a href attribute value ending with ".jpg"
-//    [attribute|=value]	$("[title|='Tomorrow']")	All elements with a title attribute value equal to 'Tomorrow', or starting with 'Tomorrow' followed by a hyphen
-//    [attribute^=value]	$("[title^='Tom']")	All elements with a title attribute value starting with "Tom"
-//    [attribute~=value]	$("[title~='hello']")	All elements with a title attribute value containing the specific word "hello"
-//    [attribute*=value]	$("[title*='hello']")	All elements with a title attribute value containing the word "hello"
-//        
-//    :input	$(":input")	All input elements
-//    :text	$(":text")	All input elements with type="text"
-//    :password	$(":password")	All input elements with type="password"
-//    :radio	$(":radio")	All input elements with type="radio"
-//    :checkbox	$(":checkbox")	All input elements with type="checkbox"
-//    :submit	$(":submit")	All input elements with type="submit"
-//    :reset	$(":reset")	All input elements with type="reset"
-//    :button	$(":button")	All input elements with type="button"
-//    :image	$(":image")	All input elements with type="image"
-//    :file	$(":file")	All input elements with type="file"
-//    :enabled	$(":enabled")	All enabled input elements
-//    :disabled	$(":disabled")	All disabled input elements
-//    :selected	$(":selected")	All selected input elements
-//    :checked	$(":checked")	All checked input elements
-
 
 /* 
 	https://app.pluralsight.com/library/courses/jquery-fundamentals/table-of-contents
@@ -384,3 +288,119 @@ $.post(url, data, callback, datatype);
 
 // using Fiddler:
 // instead of http://localhost:2708 use http://localhost.:2708  (dot in localhost)
+
+jQuery-UI
+	$('#myDiv').button();
+	$('#mySel').buttonset();
+	
+	$('#draggables').draggable();
+	$('#draggables').children.draggable();
+	
+	$('#d1').draggable({ axis: "x" });
+	$('#d2').draggable({ axis: "y" });
+	$('#d3').draggable({ containment: "#draggables" });
+	
+	$('#d1, #d2, #d3').draggable("option", "stack", ".ui-draggable");
+	
+	$('#d1').draggable({
+		revert: "invalid";
+	});
+	
+	$("#trash").droppable();
+	$("#trash").droppable({	
+		accept: "#d3",
+		drop: funcion(event, ui) {
+			ui.draggable.remove();
+		}
+	});
+	
+	$("#sortable").sortable();
+	$("#sortable").sortable({ placeholder: "placeholder" });
+	
+	$("#d3").resizable();
+	
+	
+Plugins
+	http://plugins.jquery.com/
+	http://jquery-plugins.net/
+	
+	
+	maxlength 
+	typeahead
+	listnav
+	
+	
+https://app.pluralsight.com/profile/author/elijah-manor
+https://app.pluralsight.com/profile/author/dan-wahlin
+
+
+makeArray	=> Convert an array-like object into a true JavaScript array.
+inArray	=> check if item exists in array
+unique	=> unique items in array
+merge	=> join 2 arrays
+map		=> apply a function in each item and return a new array. Translate all items in an array or object to new array of items.
+grep	=> Finds the elements of an array which satisfy a filter function. The original array is not affected.
+
+
+	<script type="text/javascript">
+	
+		var myArray = [1,2,3,3,4,4,5];
+		var myArray2 = [6,7,8];
+		
+		if($.inArray(4, myArray) != -1)
+			console.log("4 is in the array");
+	
+		if($.inArray(44, myArray) != -1)
+			console.log("44 is in the array");
+			
+		$.unique(myArray);
+		console.log(myArray);
+		
+		$.merge(myArray, myArray2);
+		console.log(myArray);
+		
+		var newArray = $.map(myArray, function(item, idx) {
+			return item * 2;
+		});
+		console.log(newArray);
+		
+		var greppedArray = $.grep(myArray, function(item) {
+			return item%2 == 0;
+		});
+		console.log(greppedArray);
+		
+			
+	$(function() {
+		console.log($.makeArray($("div")));
+		
+	});
+		
+	</script>
+	
+	<div id="out1">1</div>
+	<div id="out2">2</div>
+	<div id="out3">3</div>
+	<div id="out4">4</div>
+	<div id="out5">5</div>
+	<div id="out6">6</div>
+	<div id="out7">7</div>
+	
+	
+var q = $('form').serialize();
+var a = $('form').serializeArray();
+$.each(a, function(i, field) {
+	console.log(field.name +', '+ field.value);
+});
+
+$('form').submit(function (event) {
+	alert('submitting!');
+	event.preventDefault();
+});
+
+Fuel UX
+http://getfuelux.com/
+
+TypeAhead.js
+Hogan template
+
+
