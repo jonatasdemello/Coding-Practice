@@ -1,51 +1,57 @@
-function Fn_map_0() {
+// The map() method create a new array with the results of calling a provided function on every element in the calling array.
 
-    // map() — creates a new array with the results of calling a provided function on every element in the calling array.
-    // the map() method will also call a provided function on every element in the array. 
-    // The difference is that map() utilizes return values and actually returns a new Array of the same size.
-    // map() Use it when: You want to translate values in an array into another set of values.
-    // What it does: Map traverses the array from left to right. It invokes a function (in this case, eachAmount * .93) on eachAmount 
-    // When the method is finished mapping all the elements it returns a new array with all the translated elements.
+// map() Use it when: You want to translate values in an array into another set of values.
+// Note: map() does not execute the function for array elements without values.
+// Note: map() does not change the original array.
 
-    const dollars = [32, 45, 50];
-    const euros = dollars.map(eachAmount => eachAmount * .93);
+var array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+console.log('m1:', map1); // expected output: Array [2, 8, 18, 32]
 
-    console.log(euros); //  [29.76, 41.85, 46.5]
+// What it does: Map traverses the array from left to right. 
+// It invokes a function (in this case, eachAmount * .93) on eachAmount 
+// When the method is finished mapping all the elements it returns a new array with all the translated elements.
+
+console.log('------------- map');
+const dollars = [32, 45, 50];
+const euros = dollars.map(eachAmount => eachAmount * .93);
+console.log('euros:', euros); //  [29.76, 41.85, 46.5]
+
+
+console.log('------------- cars');
+var cars = [
+  {    model: 'Buick',  price: 'cheap'  },
+  {    model: 'Audi',   price: 'expensive'  },
+  {    model: 'Ford',   price: 'average'  },
+  {    model: 'GM',     price: 'cheap'  }
+];
+
+// return a new array with prices => called Plucking
+var prices = cars.map(function (c) {
+  return c.price;
+});
+console.log('prices:', prices);
+
+
+console.log('------------- numbers');
+var numbers = [1, 2, 3];
+var double = [];
+// using for
+for (var i = 0; i < numbers.length; i++) {
+  double.push(numbers[i] * 2);
 }
+// using map
+var d = double.map(function (n) {
+  return n * 2;
+});
+console.log('numbers:', numbers);
+console.log('d-for:', double);
+console.log('d-map:', d);
 
-function Fn_map_1() {
-    /*
-    The map() method creates a new array with the results of calling a function for every array element.
-    The map() method calls the provided function once for each element in an array, in order.
-    Note: map() does not execute the function for array elements without values.
-    Note: map() does not change the original array.
-
-    array.map(function(currentValue, index, arr), thisValue)
-        currentValue	Required. The value of the current element
-        index	Optional. The array index of the current element
-        arr	Optional. The array object the current element belongs to
-    */
-
-    var numbers = [1, 2, 3];
-    var double = [];
-
-    for (var i = 0; i < numbers.length; i++) {
-        double.push(numbers[i] * 2);
-    }
-
-    var d = double.map(function (n) {
-        return n * 2;
-    });
-
-    console.log(numbers);
-    console.log(double);
-    console.log(d);
-}
 
 function mapForEach(arr, fn) {
   const newArr = [];
-
-  for (let i=0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     newArr.push(
       fn(arr[i])
     );

@@ -9,6 +9,7 @@
 // - when it makes your code less readable
 // - in object methods, because "this" is not bound to anything 
 //   and will inherit the value of this from its parent scope
+
     var cat = {
         lives: 9,
         jumps: () => {
@@ -16,14 +17,16 @@
         }
     }
 // - in callback function with dynamic context
-//    var button = document.getElementById('press');
-//    button.addEventListener('click', () => {
-//        this.classList.toggle('on');
-//    });
+/*
+  var button = document.getElementById('press');
+  button.addEventListener('click', () => {
+    this.classList.toggle('on');
+  });
+*/
 // gives a "TypeError" because "this" is not bound to the button
 // it is bound to its parent scope
 
-
+console.log('------------- arrow-function');
 // ES5 syntax:
 function timesTwoA(params) {
     return params * 2;
@@ -43,13 +46,13 @@ console.log(add(1, 2));
 const add0 = (a, b) => {
     return a + b
 }; // with {} must use retrun 
-
+// or
 const add1 = (a, b) => a + b; // no need for return
 
 console.log(add0(1, 2));
 console.log(add1(3, 4));
 
-
+// empty
 const two = () => {
     return 2
 };
@@ -64,15 +67,27 @@ console.log(double(4));
 
 // arrow functions are usefull in map() and reduce()
 const numbers = [1, 2, 3]
-let res = numbers.map(function (n) {
+let res1 = numbers.map(function (n) {
     return 2 * n;
 });
-console.log('Numbers:', res);
+console.log('Numbers:', res1);
 // or
-let resMap = numbers.map(n => 2 * n);
-console.log('Numbers:', resMap);
+let res2 = numbers.map(n => 2 * n);
+console.log('Numbers:', res2);
 
+console.log('------------- computers');
+const team0 = {
+  members: ['Jane', ' Bill'],
+  teamName: 'Super Squad',
+  teamSummary: function () {
+      return this.members.map( function(m) {
+          return `${m} in on team ${this.teamName}`;
+      }.bind(this)); // without bind doesn't work
+  }
+};
+console.log(team0.teamSummary());
 
+console.log('------------- computers');
 const team = {
     members: ['Jane', ' Bill'],
     teamName: 'Super Squad',
@@ -83,7 +98,6 @@ const team = {
     }
 };
 console.log(team.teamSummary());
-
 
 // ES5
 // bind(this) is required to help pass the this context into the function.
