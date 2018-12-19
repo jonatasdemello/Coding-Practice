@@ -65,5 +65,5 @@ console.log(arr1);
 const arr2 = mapForEach(arr1, (item) => {
   return item * 2
 });
-
 console.log(arr2);
+

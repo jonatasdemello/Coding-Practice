@@ -48,3 +48,4 @@ function findWhere(array, criteria) {
 
 var res = findWhere(ladders, {height: 25});
 console.log(res);
+

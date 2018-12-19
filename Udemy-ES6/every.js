@@ -29,4 +29,6 @@ var allCanRun = computers.every(function(c){
 });
 console.log('all-can-run:', allCanRun); // expected false
 
+// or 
+// computers.every(c => c.ram > 16); // false
 

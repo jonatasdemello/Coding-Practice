@@ -83,3 +83,4 @@ function areaCalc(image){
 }
 
 images.forEach(areaCalc);
+

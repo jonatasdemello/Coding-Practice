@@ -27,3 +27,4 @@ var onlySomeCan = computers.some(function (c) {
   return c.ram > 16;
 });
 console.log('ony-some:', onlySomeCan); // expected true
+

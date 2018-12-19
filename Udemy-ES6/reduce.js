@@ -10,12 +10,14 @@ const array1 = [1, 2, 3, 4];
 const reducer = (accumulator, curentValue) => accumulator + curentValue;
 // 1 + 2 + 3 + 4
 console.log(array1.reduce(reducer)); // expected output: 10
+
 // 5 + 1 + 2 + 3 + 4
 console.log(array1.reduce(reducer, 5)); // expected output: 15
+//arr.reduce(callback[, initialValue])
 
 /*
 reduce() executes the callback function once for each element present in the array, 
-excluding holes in the array, receiving four arguments:
+excluding holes in the array, receiving four arguments: 
   accumulator (acc)
   curentValue (cur)
   curentIndex (idx)
