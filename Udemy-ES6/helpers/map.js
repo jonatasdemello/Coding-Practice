@@ -4,6 +4,9 @@
 // Note: map() does not execute the function for array elements without values.
 // Note: map() does not change the original array.
 
+// if you use an anonymous function, you must use return
+
+
 var array1 = [1, 4, 9, 16];
 const map1 = array1.map(x => x * 2);
 console.log('m1:', map1); // expected output: Array [2, 8, 18, 32]

@@ -56,7 +56,7 @@ console.log(add1(3, 4));
 const two = () => {
     return 2
 };
-// or: tow = () => 2;
+// or: two = () => 2;
 
 const double = number => {
     return 2 * number;

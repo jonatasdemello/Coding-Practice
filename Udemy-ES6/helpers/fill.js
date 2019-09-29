@@ -1,5 +1,22 @@
 // The fill() method fills all the elements of an array from a start index to an end index with a static value. The end index is not included.
 
+// Fill all the array elements with a static value:
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.fill("Kiwi");
+
+// The fill() method fills the specified elements in an array with a static value.
+// You can specify the position of where to start and end the filling. If not specified, all elements will be filled.
+// Note: this method overwrites the original array.
+
+// array.fill(value, start, end)
+
+// Parameter	Description
+// value	Required. The value to fill the array with
+// start	Optional. The index to start filling the array (default is 0)
+// end	Optional. The index to stop filling the array (default is array.length)
+
+
 var array1 = [1, 2, 3, 4];
 
 // fill with 0 from position 2 until position 4

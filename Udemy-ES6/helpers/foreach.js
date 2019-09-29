@@ -19,11 +19,13 @@ var colors = ['red', 'green', 'blue'];
 for (var i = 0; i < colors.length; i++) {
   console.log(colors[i]);
 }
+
 console.log('------------- forEach');
 // using forEach
 colors.forEach(function (c) {
   console.log(c);
 });
+
 console.log('------------- forEach does not change original');
 // using forEach
 colors.forEach(function (c) {

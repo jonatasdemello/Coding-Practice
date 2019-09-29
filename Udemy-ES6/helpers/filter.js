@@ -5,6 +5,12 @@
 // Note: filter() does not change the original array.
 
 
+// The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+// Note: filter() does not execute the function for array elements without values.
+// Note: filter() does not change the original array.
+
+
+
 var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 const result = words.filter(word => word.length > 6);
 console.log('word.length > 6:', result);  // expected output: Array ["exuberant", "destruction", "present"]

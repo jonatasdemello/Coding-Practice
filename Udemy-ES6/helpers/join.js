@@ -3,6 +3,14 @@
 // The string conversions of all array elements are joined into one string.
 // If an element is undefined or null, it is converted to the empty string.
 
+// convert the elements of an array into a string
+// param: separator
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var energy = fruits.join();
+
+
+
 var elements = ['Fire', 'Wind', 'Rain'];
 
 console.log(elements.join()); // expected output: Fire,Wind,Rain

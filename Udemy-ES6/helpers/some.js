@@ -1,5 +1,7 @@
 // The some() method tests whether at least one element in the array passes the test implemented by the provided function.
 
+// must use return
+
 var array = [1, 2, 3, 4, 5];
 var even = function(element) {
   // checks whether an element is even
