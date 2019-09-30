@@ -1,0 +1,19 @@
+Alias		Type Name		.Net Type
+byte		System.Byte			struct
+sbyte		System.SByte		struct
+int			System.Int32		struct
+uint		System.UInt32		struct
+short		System.Int16		struct
+ushort		System.UInt16		struct
+long		System.Int64		struct
+ulong		System.UInt64		struct
+float		System.Single		struct
+double		System.Double		struct
+char		System.Char			struct
+bool		System.Boolean		struct
+object		System.Object		Class
+string		System.String		Class
+decimal		System.Decimal		struct
+DateTime	System.DateTime		struct
+
+
