@@ -4,7 +4,7 @@ using System.Data;
 using System.Reflection;
 using System.Text;
 
-namespace Xello.Spark.Core.Repositories
+namespace MiscCode
 {
     /// <summary>
     /// Implement CopyToDataTable<T> Where the Generic Type T Is Not a DataRow
