@@ -1,0 +1,127 @@
+#-----------------------------	
+https://www.udemy.com/git-advanced-commands/learn/v4/content
+#-----------------------------	
+
+#original file:
+
+[user]
+	name=jonatas
+	email=jonatas.mello@hotmail.com
+[winUpdater]
+	recentlySeenVersion = 2.19.1.windows.1
+[core]
+	autocrlf=true
+[diff]
+	tool = winmerge
+[difftool "winmerge"]
+    cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
+[difftool]
+	prompt = false
+
+#-----------------------------	
+	
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
+	
+
+[diff]
+    tool = winmerge
+[difftool "winmerge"]
+    cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
+	
+[diff]
+    guitool = winmerge
+[difftool "winmerge"]
+    path = c:/Program Files (x86)/winmerge/winmergeu.exe
+    cmd = \"c:/Program Files (x86)/winmerge/winmergeu.exe\" \"$LOCAL\" \"$REMOTE\"
+
+#-----------------------------
+
+git config --get-all
+
+git config --global -e
+
+git config --global core.editor code
+
+git config --global --get diff.tool
+
+git config --global diff.tool default-difftool
+
+git log --oneline
+
+# remove prompt for each file:
+git config --global difftool.prompt false
+git config --global --get difftool.prompt false
+
+
+git difftool --tool-help
+git help config
+
+# open winmerge for file
+git difftool --tool=winmerge
+
+git difftool details.html
+
+git diff HEAD
+git status -s
+
+git difftool HEAD HEAD~1
+
+
+git config --global --list
+
+git config --global merge.tool code
+git config --global mergetool.code.cmd "code --wait \"$MERGED\""
+git config --global mergetool.prompt false
+git config --global mergetool.keepbackup false
+
+git reflog
+git reflog HEAD@{20}
+git reflog HEAD@{3.days.ago}
+
+git diff HEAD@{5} HEAD@{4}
+git diff HEAD@{1.min.ago} HEAD@{1.week.ago}
+	
+git commit --amend -m "new message"
+
+--squash merge multiple commits in one
+
+# Aliases 
+git config --global alias.onelinegraph 'log --oneline --graph --decorate'
+git config --global --list
+
+git onelinegraph
+
+# always prune during fetch
+
+gc --prune=now
+git config --global fetch.prune true
+
+# soft reset - un-stage the files
+git reset head
+
+# hard reset
+git clean -d -x -f
+git clean -d -x -i 		# interactive
+
+git reset {id} --hard
+
+git push -u origin {branch}
+
+git revert {id}
+
+
+git stash
+git stash list
+git stash pop
+git stash show stash@{0}
+git stash apply stash@{2}
+git stash -u save ThisIsMyChange
+git stash show stash@{0}
+git stash drop stash@{0}
+
+
+
+

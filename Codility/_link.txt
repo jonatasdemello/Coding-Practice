@@ -1,2 +1,33 @@
+// **************************************
+//	Codility Solutions
+// **************************************
+// https://www.martinkysel.com/codility-tape-equilibrium-solution/
+// https://www.martinkysel.com/codility-solutions/
+// https://codesays.com/solutions-to-training-by-codility/
+
+
+
+https://docs.python.org/3/tutorial/introduction.html
+https://app.codility.com/programmers/lessons/1-iterations/
+https://codesays.com/solutions-to-training-by-codility/
+https://codesays.com/2014/solution-to-binary-gap-by-codility/
+https://www.martinkysel.com/codility-binarygap-solution/
+
+
+https://www.raywenderlich.com/1001-how-to-be-a-better-developer-with-programming-challenges
+
+IDE
+https://coderunnerapp.com/
+
+https://www.hackerrank.com/
+
+https://mathfights.com/
+https://www.topcoder.com/
+https://www.codingame.com/
+https://codefights.com/
+https://www.codeeval.com/
+http://adventofcode.com/
+
+
 
 https://github.com/sdurandeu/codility-csharp.git
