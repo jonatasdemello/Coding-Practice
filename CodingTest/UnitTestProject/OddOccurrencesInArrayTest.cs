@@ -1,5 +1,5 @@
 ﻿using System;
-using CodingTest;
+using CodingTest.Codility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodilityCS
+namespace CodingTest.Codility
 {
-    class PrefixSet
+    public class PrefixSet
     {
         /*
         //-----------------------------------------
@@ -24,7 +24,7 @@ namespace CodilityCS
         is 3, because sequence [ A[0], A[1], A[2], A[3] ] equal to [2, 2, 1, 0], contains all values that occur in array A.
 
         Write a function
-        class Solution { public int solution(int[] A); }
+        public class Solution { public int solution(int[] A); }
         that, given a non-empty array A consisting of N integers, returns the first covering prefix of A.
         For example, given array A such that
           A[0] = 2
@@ -158,5 +158,76 @@ namespace CodilityCS
             }
             return 0;
         }
+
+        public static int solution(int[] A)
+        {
+            // The first covering prefix of array A is the smallest integer P such that 0<=P<N and such that 
+            // every value that occurs in array A also occurs in sequence A[0], A[1], ..., A[P].
+            var length = A.Length;
+            List<int> unique = new List<int>();
+
+            if (length == 0) return 0;
+            if (length == 1) return 0;
+
+            // first add unique elements
+            for (var i = 0; i < length; i++)
+            {
+                if (unique.IndexOf(A[i]) == -1)
+                {
+                    unique.Add(A[i]); // add to list
+                }
+            }
+            //again, remove until the list is empty
+            for (var i = 0; i < length; i++)
+            {
+                if (unique.IndexOf(A[i]) > -1)
+                {
+                    unique.Remove(A[i]); // remove from list
+                }
+                if (unique.Count == 0)
+                {
+                    return i;
+                }
+            }
+            return 0;
+        }
+        public static int solution2(int[] A)
+        {
+            // The first covering prefix of array A is the smallest integer P such that 0<=P<N and such that 
+            // every value that occurs in array A also occurs in sequence A[0], A[1], ..., A[P].
+            // N is an integer within the range [1..1,000,000];
+            // each element of array A is an integer within the range [0..N−1].
+            var len = A.Length;
+            int maxSize = 1000001;
+            int[] B = new int[maxSize];
+
+            int unique = 0;
+
+            //run through the whole array and add all the numbers to the set
+            for (var i = 0; i < len; i++)
+            {
+                if (B[A[i]] == 0)
+                {
+                    B[A[i]] = 1; // flag as existing!
+                    unique++;
+                }
+            }
+            //Then, traverse the array, and remove the number you are currently looking at from the set.
+            for (var i = 0; i < len; i++)
+            {
+                if (B[A[i]] == 1)
+                {
+                    B[A[i]] = 0; // remove
+                    unique--;
+                }
+                //If the set becomes empty, you’ve found your prefix set.
+                if (unique == 0)
+                {
+                    return i;
+                }
+            }
+            return 0;
+        }
+
     }
 }

@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace CodingTest
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
