@@ -23,16 +23,16 @@ namespace CodingTest
             });
             Console.WriteLine("Sequential Time elapsed: " + time0);
 
-            var time1 = StopwatchHelper.MeasureRunTime(() =>
+            var time1 = StopwatchHelper.MeasureRunTime((Action)(() =>
             {
-                ExistsInArray.ExistsBinarySearch(test2, test2[333]);
-            });
+                ExistsInArray.ExistsBinarySearch((int[])test2, (int)test2[(int)333]);
+            }));
             Console.WriteLine("Binary 1   Time elapsed: " + time1);
 
-            var time2 = StopwatchHelper.MeasureRunTime(() =>
+            var time2 = StopwatchHelper.MeasureRunTime((Action)(() =>
             {
-                ExistsInArray.BinarySearchDisplay(test2, test2[333]);
-            });
+                ExistsInArray.ExistsBinarySearch((int[])test2, (int)test2[(int)333]);
+            }));
             Console.WriteLine("Binary 2   Time elapsed: " + time2);
         }
         static class StopwatchHelper

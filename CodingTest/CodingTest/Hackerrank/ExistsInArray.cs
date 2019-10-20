@@ -37,38 +37,35 @@ namespace CodingTest
             return false;
         }
 
-        public static bool ExistsBinarySearch(int[] ints, int k)
+        public static bool ExistsBinarySearch(int[] arr, int k)
         {
-            // binary search
             var min = 0;
-            var max = ints.Length - 1;
-
+            var max = arr.Length - 1;
             while (min <= max)
             {
                 int mid = (min + max) / 2;
-                if (k > ints[mid])
+                if (k > arr[mid])
                     min = mid + 1;
                 else
                     max = mid - 1;
-                if (ints[mid] == k)
+                if (arr[mid] == k)
                     return true;
             }
             return false;
         }
         public static bool BinarySearchDisplay(int[] arr, int key)
         {
-            int minNum = 0;
-            int maxNum = arr.Length - 1;
-
-            while (minNum <= maxNum)
+            int min = 0;
+            int max = arr.Length - 1;
+            while (min <= max)
             {
-                int mid = (minNum + maxNum) / 2;
+                int mid = (min + max) / 2;
                 if (key == arr[mid])
                     return true;
                 else if (key < arr[mid])
-                    maxNum = mid - 1;
+                    max = mid - 1;
                 else
-                    minNum = mid + 1;
+                    min = mid + 1;
             }
             return false;
         }

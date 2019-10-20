@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>method</Title>
+            <Description>Inserts an empty method.</Description>
+            <Author>Steve Fenton</Author>
+            <Shortcut>met</Shortcut>
+              <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+           <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <Default>void</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <Default>methodName</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[public $type$ $name$()
+                {
+                    throw new NotImplementedException();
+                }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

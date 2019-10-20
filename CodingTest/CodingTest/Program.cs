@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using CodingTest.Udemy;
 
 namespace CodingTest
 {
@@ -15,10 +16,11 @@ namespace CodingTest
             //var res = CyclicRotation.Solution(new int[] { 1, 2, 3, 4, 5 }, 2);
             //Console.WriteLine("result: {0}", string.Join(",", res));
 
-            CompareSearch.CompareSearches();
+            //CompareSearch.CompareSearches();
 
-            Console.WriteLine("nothing to show...");
             //Console.ReadKey();
+            var b = new BinarySearch();
+            b.TestBinarySearch();
         }
     }
 }
