@@ -6,13 +6,6 @@ using System.Text;
 
 namespace CodingTest.DataStructures
 {
-    class PackageDic
-    {
-        public string Company { get; set; }
-        public double Weight { get; set; }
-        public long TrackingNumber { get; set; }
-    }
-
     class DictionaryDs
     {
         public void TestDictionary()
@@ -151,6 +144,12 @@ namespace CodingTest.DataStructures
             sw.Stop();
             Console.WriteLine("D={0}", sw.ElapsedMilliseconds.ToString());
         }
+    }
+    class PackageDic
+    {
+        public string Company { get; set; }
+        public double Weight { get; set; }
+        public long TrackingNumber { get; set; }
     }
 }
 

@@ -17,7 +17,14 @@ namespace CodingTest.DataStructures
             // The reason is speed. 
             // A C# Hashtable stores items faster than a C# Dictionary, which sacrifices speed for the sake of order.
 
-            Hashtable ht1 = new Hashtable() { { 1, "One" }, { 2, "Two" }, { 3, "Three" }, { 4, "Four" }, { 5, null }, { "Fv", "Five" }, { 8.5F, 8.5 } };
+            Hashtable ht1 = new Hashtable() {
+                { 1, "One" },
+                { 2, "Two" },
+                { 3, "Three" },
+                { 4, "Four" },
+                { 5, null },
+                { "Fv", "Five" },
+                { 8.5F, 8.5 } };
 
             // Hashtable can include all the elements of Dictionary as shown below.
             Dictionary<int, string> dict = new Dictionary<int, string>();
@@ -27,7 +34,8 @@ namespace CodingTest.DataStructures
             Hashtable htDict = new Hashtable(dict);
 
             // Add() will throw an exception if you try to add a key that already exists in the Hashtable.
-            // So always check the key using the Contains() or ContainsKey() method before adding a key-value pair into the Hashtable
+            // So always check the key using the Contains() or ContainsKey() 
+            // method before adding a key-value pair into the Hashtable
 
             Hashtable ht = new Hashtable();
 
