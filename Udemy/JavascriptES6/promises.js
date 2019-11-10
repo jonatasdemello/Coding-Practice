@@ -8,6 +8,8 @@
 //     reject();
 // });
 
+// Register the callback functions:
+
 //promise.then(()=>{});
 //promise.catch(()=>{});
 
@@ -15,13 +17,10 @@ ps1 = new Promise( (resolve, reject) => {
     console.log('inside');
     resolve();
 });
+
 ps1
-    .then(() => {
-    console.log('finished');
-    })
-    .then(()=>{
-        console.log('run after');
-    });
+  .then(() => { console.log('finished'); })
+  .then(() => { console.log('run after'); });
 
 // or 
 ps2 = new Promise( (resolve, reject) => {
@@ -59,7 +58,7 @@ url = "https://jsonplaceholder.typicode.com/posts/";
 //fetch(url).then(data => console.log(data));
 
 fetch(url)
-    .then(response => response.json())
+    .then(response => response.json()) // get access to the json result
     .then(data => console.log(data))
     .catch(error => console.log('Error: ', error));
 

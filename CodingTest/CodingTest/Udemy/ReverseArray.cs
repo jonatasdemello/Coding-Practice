@@ -38,6 +38,7 @@ namespace CodingTest
             Console.WriteLine(String.Format("Average Array Xor      (Length: {0,12:0.00})", totalXr.Average()));
         }
 
+        // <access modifier> delegate <return type> <delegate_name>(<parameters>)
         delegate string StringDelegate(string s);
 
         static long Benchmark(string description, StringDelegate d, int times, string text)

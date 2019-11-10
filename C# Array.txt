@@ -1,0 +1,39 @@
+C# Array Properties
+Property                              | Description
+IsFixedSize                           | It is used to get a value indicating whether the Array has a fixed size or not.
+IsReadOnly                            | It is used to check that the Array is read-only or not.
+IsSynchronized                        | It is used to check that access to the Array is synchronized or not.
+Length                                | It is used to get the total number of elements in all the dimensions of the Array.
+LongLength                            | It is used to get a 64-bit integer that represents the total number of elements in all the dimensions of the Array.
+Rank                                  | It is used to get the rank (number of dimensions) of the Array.
+SyncRoot                              | It is used to get an object that can be used to synchronize access to the Array.
+
+C# Array Methods
+Method                                | Description
+AsReadOnly<T>(T[])                    | It returns a read-only wrapper for the specified array.
+BinarySearch(Array,Int32,Int32,Object)| It is used to search a range of elements in a one-dimensional sorted array for a value.
+BinarySearch(Array,Object)            | It is used to search an entire one-dimensional sorted array for a specific element.
+Clear(Array,Int32,Int32)              | It is used to set a range of elements in an array to the default value.
+Clone()                               | It is used to create a shallow copy of the Array.
+
+Copy(Array,Array,Int32)               | It is used to copy elements of an array into another array by specifying starting index.
+CopyTo(Array,Int32)                   | It copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index
+CreateInstance(Type,Int32)            | It is used to create a one-dimensional Array of the specified Type and length.
+Empty<T>()                            | It is used to return an empty array.
+Finalize()                            | It is used to free resources and perform cleanup operations.
+Find<T>(T[],Predicate<T>)             | It is used to search for an element that matches the conditions defined by the specified predicate.
+IndexOf(Array,Object)                 | It is used to search for the specified object and returns the index of its first occurrence in a one-dimensional array.
+Initialize()                          | It is used to initialize every element of the value-type Array by calling the default constructor of the value type.
+Reverse(Array)                        | It is used to reverse the sequence of the elements in the entire one-dimensional Array.
+Sort(Array)                           | It is used to sort the elements in an entire one-dimensional Array.
+ToString()                            | It is used to return a string that represents the current object.
+
+ConvertAll() | Converts an array of one type to an array of another type.
+Exists(T[] array, Predicate<T> match)	| Determines whether the specified array contains elements that match the conditions defined by the specified predicate.
+Fill((T[] array, T value)	| Assigns the given value of type T to each element of the specified array.
+FindAll(T[], Predicate<T>)	| Retrieves all the elements that match the conditions defined by the specified predicate.
+FindIndex()	 | Searches for an element that matches the conditions defined by a specified predicate, and returns the zero-based index of the first occurrence within an Array or a portion of it.
+FindLast(T[], Predicate<T>)	| Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire Array.
+
+
+
