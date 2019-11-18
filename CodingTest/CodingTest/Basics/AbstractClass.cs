@@ -12,8 +12,10 @@ namespace CodingTest.Basics
 
     public abstract class E
     {
+        // Abstract methods do not provide an implementation and force the derived classes to override the method.
         public abstract void AbstractMethod(int i);
 
+        // Virtual methods have an implementation and provide the derived classes with the option of overriding it.
         public virtual void VirtualMethod(int i)
         {
             // Default implementation which can be overridden by subclasses.

@@ -3,20 +3,20 @@ using System;
 // Define a custom delegate that has a string parameter and returns void.
 delegate void CustomDel(string s);
 
-class TestClass
+public class TestClass
 {
     // Define two methods that have the same signature as CustomDel.
-    static void Hello(string s)
+    public static void Hello(string s)
     {
         Console.WriteLine($"  Hello, {s}!");
     }
 
-    static void Goodbye(string s)
+    public static void Goodbye(string s)
     {
         Console.WriteLine($"  Goodbye, {s}!");
     }
 
-    static void Main()
+    public static void MainHello()
     {
         // Declare instances of the custom delegate.
         CustomDel hiDel, byeDel, multiDel, multiMinusHiDel;

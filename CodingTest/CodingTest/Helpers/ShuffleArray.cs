@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CodingTest.Helpers
@@ -35,6 +36,55 @@ namespace CodingTest.Helpers
                     list[randomIndex] = tmp;
                 }
             }
+        }
+
+        // https://www.exceptionnotfound.net/understanding-the-fisher-yates-card-shuffling-algorithm/
+        public static void FisherYates1()
+        {
+            // O(n^2)
+            Random r = new Random();
+
+            List<char> unshuffledLetters = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' };
+            List<char> shuffledLetters = new List<char>();
+
+            //Step 1: For each remaining unshuffled letter
+            for (int n = unshuffledLetters.Count; n > 0; n--)
+            {
+                //Step 2: Randomly select one of the remaining unshuffled letters
+                int k = r.Next(n);
+
+                //Step 3: Place the selected letter in the shuffled collection
+                char temp = unshuffledLetters[k];
+                shuffledLetters.Add(temp);
+
+                //Step 4: Remove the selected letter from the unshuffled collection
+                unshuffledLetters.RemoveAt(k);
+            }
+        }
+
+        public static void FisherYates2()
+        {
+            // O(n)
+            Random r = new Random();
+            List<char> unshuffledLetters = new List<char>() { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' };
+
+            //Step 1: For each unshuffled item in the collection
+            for (int n = unshuffledLetters.Count - 1; n > 0; --n)
+            {
+                //Step 2: Randomly pick an item which has not been shuffled
+                int k = r.Next(n + 1);
+
+                //Step 3: Swap the selected item with the last "unstruck" letter in the collection
+                char temp = unshuffledLetters[n];
+                unshuffledLetters[n] = unshuffledLetters[k];
+                unshuffledLetters[k] = temp;
+            }
+        }
+
+        public static void ShuffleSort()
+        {
+            var cards = Enumerable.Range(0, 51);
+            var shuffledcards = cards.OrderBy(a => Guid.NewGuid());
         }
     }
 }
