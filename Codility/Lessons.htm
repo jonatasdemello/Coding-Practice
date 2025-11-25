@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<title>Codility Lessons</title>
+<style>
+	p {margin: 3px; padding: 3px;}
+	h1 {margin: 3px; padding: 5px; background-color: rgb(101, 172, 133);}
+	h2 {margin: 3px; padding: 5px; background-color: lightgray;}
+	h3 {margin: 3px; padding: 5px; background-color: lightblue;}
+</style>
+</head>
+<body>
+
+<h1>Lessons</h1>
+	<p><a href="https://app.codility.com/programmers/lessons/1-iterations/"><i>Lesson 1: </i>Iterations</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/2-arrays/"><i>Lesson 2: </i>Arrays</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/3-time_complexity/"><i>Lesson 3: </i>Time Complexity</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/4-counting_elements/"><i>Lesson 4: </i>Counting Elements</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/5-prefix_sums/"><i>Lesson 5: </i>Prefix Sums</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/6-sorting/"><i>Lesson 6: </i>Sorting</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/7-stacks_and_queues/"><i>Lesson 7: </i>Stacks and Queues</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/8-leader/"><i>Lesson 8: </i>Leader</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/9-maximum_slice_problem/"><i>Lesson 9: </i>Maximum slice problem</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/"><i>Lesson 10: </i>Prime and composite numbers</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/11-sieve_of_eratosthenes/"><i>Lesson 11: </i>Sieve of Eratosthenes</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/12-euclidean_algorithm/"><i>Lesson 12: </i>Euclidean algorithm</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/13-fibonacci_numbers/"><i>Lesson 13: </i>Fibonacci numbers</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/14-binary_search_algorithm/"><i>Lesson 14: </i>Binary search algorithm</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/15-caterpillar_method/"><i>Lesson 15: </i>Caterpillar method</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/16-greedy_algorithms/"><i>Lesson 16: </i>Greedy algorithms</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/17-dynamic_programming/"><i>Lesson 17: </i>Dynamic programming</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/90-tasks_from_indeed_prime_2015_challenge/"><i>Lesson 90: </i>Tasks from Indeed Prime 2015 challenge</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/91-tasks_from_indeed_prime_2016_challenge/"><i>Lesson 91: </i>Tasks from Indeed Prime 2016 challenge</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/92-tasks_from_indeed_prime_2016_college_coders_challenge/"><i>Lesson 92: </i>Tasks from Indeed Prime 2016 College Coders challenge</a></p>
+	<p><a href="https://app.codility.com/programmers/lessons/99-future_training/"><i>Lesson 99: </i>Future training</a></p>
+<hr>
+
+<h1>Lesson 1</h1>
+<h2>Iterations</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/1-iterations/binary_gap/">BinaryGap</a></h3>
+<p>Find longest sequence of zeros in binary representation of an integer.</p>
+<p>A&nbsp;<i>binary gap</i>&nbsp;within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.</p>
+<p>For example, number 9 has binary representation&nbsp;1001&nbsp;and contains a binary gap of length 2.</p>
+<p>The number 529 has binary representation&nbsp;1000010001&nbsp;and contains two binary gaps: one of length 4 and one of length 3.</p>
+<p>The number 20 has binary representation&nbsp;10100&nbsp;and contains one binary gap of length 1.</p>
+<p>The number 15 has binary representation&nbsp;1111&nbsp;and has no binary gaps.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int N); }</p>
+<p>that, given a positive integer N, returns the length of <b>its longest</b> binary gap.</p>
+<p>The function should return 0 if N doesn't contain a binary gap.</p>
+<p>For example, given N = 1041 the function should return 5, because N has binary representation&nbsp;10000010001&nbsp;and so its longest binary gap is of length 5.</p>
+<p>Given N = 32 the function should return 0, because N has binary representation '100000' and thus no binary gaps.</p>
+<p>Write an efficient algorithm for the following assumptions:</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..2,147,483,647].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1).</p>
+<hr>
+
+<h1>Lesson 2</h1>
+<h2>Arrays</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/">OddOccurrencesInArray</a></h3>
+<p>Find value that occurs in odd number of elements.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired.</p>
+<p>For example, in array A such that:</p>
+<p>A[0] = 9 A[1] = 3 A[2] = 9 A[3] = 3 A[4] = 9 A[5] = 7 A[6] = 9</p>
+<p> &nbsp; &diams; &nbsp; the elements at indexes 0 and 2 have value 9,</p>
+<p> &nbsp; &diams; &nbsp; the elements at indexes 1 and 3 have value 3,</p>
+<p> &nbsp; &diams; &nbsp; the elements at indexes 4 and 6 have value 9,</p>
+<p> &nbsp; &diams; &nbsp; the element at index 5 has value 7 and is unpaired.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given an array A consisting of N integers fulfilling the above conditions, returns the value of the unpaired element.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 9 A[1] = 3 A[2] = 9 A[3] = 3 A[4] = 9 A[5] = 7 A[6] = 9</p>
+<p>the function should return 7, as explained in the example above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an odd integer within the range [1..1,000,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; all but one of the values in A occur an even number of times.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/">CyclicRotation</a></h3>
+<p>Rotate an array to the right by a given number of steps.</p>
+<p>A zero-indexed array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is also moved to the first place.</p>
+<p>For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7]. The goal is to rotate array A K times; that is, each element of A will be shifted to the right by K indexes.</p>
+<p>Write a function:</p>
+<p>class Solution { public int[] solution(int[] A, int K); }</p>
+<p>that, given a zero-indexed array A consisting of N integers and an integer K, returns the array A rotated K times.</p>
+<p>For example, given array A = [3, 8, 9, 7, 6] and K = 3, the function should return [9, 7, 6, 3, 8].</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N and K are integers within the range [0..100];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000..1,000].</p>
+<p>In your solution, focus on&nbsp;correctness. The performance of your solution will not be the focus of the assessment.</p>
+<hr>
+
+<h1>Lesson 3</h1>
+<h2>Time Complexity</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/3-time_complexity/perm_missing_elem/">PermMissingElem</a></h3>
+<p>Find the missing element in a given permutation.</p>
+<p>A zero-indexed array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.</p>
+<p>Your goal is to find that missing element.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A, returns the value of the missing element.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 2 A[1] = 3 A[2] = 1 A[3] = 5</p>
+<p>the function should return 4, as it is the missing element.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; the elements of A are all distinct;</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..(N + 1)].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/3-time_complexity/frog_jmp/">FrogJmp</a></h3>
+<p>Count minimal number of jumps from position X to Y.</p>
+<p>A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.</p>
+<p>Count the minimal number of jumps that the small frog must perform to reach its target.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int X, int Y, int D); }</p>
+<p>that, given three integers X, Y and D, returns the minimal number of jumps from position X to a position equal to or greater than Y.</p>
+<p>For example, given:</p>
+<p>X = 10 Y = 85 D = 30</p>
+<p>the function should return 3, because the frog will be positioned as follows:</p>
+<p> &nbsp; &diams; &nbsp; after the first jump, at position 10 + 30 = 40</p>
+<p> &nbsp; &diams; &nbsp; after the second jump, at position 10 + 30 + 30 = 70</p>
+<p> &nbsp; &diams; &nbsp; after the third jump, at position 10 + 30 + 30 + 30 = 100</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; X, Y and D are integers within the range [1..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; X &#8804; Y.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(1);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1).</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/">TapeEquilibrium</a></h3>
+<p>Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given. Array A represents numbers on a tape.</p>
+<p>Any integer P, such that 0 &lt; P &lt; N, splits this tape into two non-empty parts: A[0], A[1], ..., A[P &#8722; 1] and A[P], A[P + 1], ..., A[N &#8722; 1].</p>
+<p>The&nbsp;<i>difference</i>&nbsp;between the two parts is the value of: |(A[0] + A[1] + ... + A[P &#8722; 1]) &#8722; (A[P] + A[P + 1] + ... + A[N &#8722; 1])|</p>
+<p>In other words, it is the absolute difference between the sum of the first part and the sum of the second part.</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = 3 A[1] = 1 A[2] = 2 A[3] = 4 A[4] = 3</p>
+<p>We can split this tape in four places:</p>
+<p> &nbsp; &diams; &nbsp; P = 1, difference = |3 &#8722; 10| = 7</p>
+<p> &nbsp; &diams; &nbsp; P = 2, difference = |4 &#8722; 9| = 5</p>
+<p> &nbsp; &diams; &nbsp; P = 3, difference = |6 &#8722; 7| = 1</p>
+<p> &nbsp; &diams; &nbsp; P = 4, difference = |10 &#8722; 3| = 7</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A of N integers, returns the minimal difference that can be achieved.</p>
+<p>For example, given:</p>
+<p>A[0] = 3 A[1] = 1 A[2] = 2 A[3] = 4 A[4] = 3</p>
+<p>the function should return 1, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [2..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000..1,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p> <hr>
+
+<h1>Lesson 4</h1>
+<h2>Counting Elements</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/">PermCheck</a></h3>
+<p>Check whether array A is a permutation.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given.</p>
+<p>A&nbsp;<i>permutation</i>&nbsp;is a sequence containing each element from 1 to N once, and only once.</p>
+<p>For example, array A such that:</p>
+<p>A[0] = 4 A[1] = 1 A[2] = 3 A[3] = 2</p>
+<p>is a permutation, but array A such that:</p>
+<p>A[0] = 4 A[1] = 1 A[2] = 3</p>
+<p>is not a permutation, because value 2 is missing.</p>
+<p>The goal is to check whether array A is a permutation.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A, returns 1 if array A is a permutation and 0 if it is not.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 4 A[1] = 1 A[2] = 3 A[3] = 2</p>
+<p>the function should return 1.</p>
+<p>Given array A such that:</p>
+<p>A[0] = 4 A[1] = 1 A[2] = 3</p>
+<p>the function should return 0.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/">FrogRiverOne</a></h3>
+<p>Find the earliest time when a frog can jump to the other side of a river.</p>
+<p>&nbsp;small frog wants to get to the other side of a river. The frog is initially located on one bank of the river (position 0) and wants to get to the opposite bank (position X+1). Leaves fall from a tree onto the surface of the river.</p>
+<p>You are given a zero-indexed array A consisting of N integers representing the falling leaves. A[K] represents the position where one leaf falls at time K, measured in seconds.</p>
+<p>The goal is to find the earliest time when the frog can jump to the other side of the river. The frog can cross only when leaves appear at every position across the river from 1 to X (that is, we want to find the earliest moment when all the positions from 1 to X are covered by leaves). You may assume that the speed of the current in the river is negligibly small, i.e. the leaves do not change their positions once they fall in the river.</p>
+<p>For example, you are given integer X = 5 and array A such that:</p>
+<p>A[0] = 1 A[1] = 3 A[2] = 1 A[3] = 4 A[4] = 2 A[5] = 3 A[6] = 5 A[7] = 4</p>
+<p>In second 6, a leaf falls into position 5. This is the earliest time when leaves appear in every position across the river.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int X, int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers and integer X, returns the earliest time when the frog can jump to the other side of the river.</p>
+<p>If the frog is never able to jump to the other side of the river, the function should return &#8722;1.</p>
+<p>For example, given X = 5 and array A such that:</p>
+<p>A[0] = 1 A[1] = 3 A[2] = 1 A[3] = 4 A[4] = 2 A[5] = 3 A[6] = 5 A[7] = 4</p>
+<p>the function should return 6, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N and X are integers within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..X].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(X), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/">MissingInteger</a></h3>
+<p>Find the smallest positive integer that does not occur in a given sequence.</p>
+<p>This is a demo task.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.</p>
+<p>For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.</p>
+<p>For another example, given A = [1, 2, 3], the function should return 4.</p>
+<p>Given A = [&#8722;1, &#8722;3], the function should return 1.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000,000..1,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<h3><a href="https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/">MaxCounters</a></h3>
+<p>Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all counters to current maximum.</p>
+<p>You are given N counters, initially set to 0, and you have two possible operations on them:</p>
+<p> &nbsp; &diams; &nbsp; <i>increase(X)</i>&nbsp;&#8722; counter X is increased by 1,</p>
+<p> &nbsp; &diams; &nbsp; <i>max counter</i>&nbsp;&#8722; all counters are set to the maximum value of any counter.</p>
+<p>A non-empty zero-indexed array A of M integers is given. This array represents consecutive operations:</p>
+<p> &nbsp; &diams; &nbsp; if A[K] = X, such that 1 &#8804; X &#8804; N, then operation K is increase(X),</p>
+<p> &nbsp; &diams; &nbsp; if A[K] = N + 1 then operation K is max counter.</p>
+<p>For example, given integer N = 5 and array A such that:</p>
+<p>A[0] = 3 A[1] = 4 A[2] = 4 A[3] = 6 A[4] = 1 A[5] = 4 A[6] = 4</p>
+<p>the values of the counters after each consecutive operation will be:</p>
+<p>(0, 0, 1, 0, 0) (0, 0, 1, 1, 0) (0, 0, 1, 2, 0) (2, 2, 2, 2, 2) (3, 2, 2, 2, 2) (3, 2, 2, 3, 2) (3, 2, 2, 4, 2)</p>
+<p>The goal is to calculate the value of every counter after all operations.</p>
+<p>Write a function:</p>
+<p>class Solution { public int[] solution(int N, int[] A); }</p>
+<p>that, given an integer N and a non-empty zero-indexed array A consisting of M integers, returns a sequence of integers representing the values of the counters.</p>
+<p>The sequence should be returned as:</p>
+<p> &nbsp; &diams; &nbsp; a structure Results (in C), or</p>
+<p> &nbsp; &diams; &nbsp; a vector of integers (in C++), or</p>
+<p> &nbsp; &diams; &nbsp; a record Results (in Pascal), or</p>
+<p> &nbsp; &diams; &nbsp; an array of integers (in any other programming language).</p>
+<p>For example, given:</p>
+<p>A[0] = 3 A[1] = 4 A[2] = 4 A[3] = 6 A[4] = 1 A[5] = 4 A[6] = 4</p>
+<p>the function should return [3, 2, 2, 4, 2], as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N and M are integers within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..N + 1].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N+M);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 5</h1>
+<h2>Prefix Sums</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">CountDiv</a></h3>
+<p>Compute number of integers divisible by k in range [a..b].</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int A, int B, int K); }</p>
+<p>that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K, i.e.:</p>
+<p>{ i : A &#8804; i &#8804; B, i&nbsp;mod&nbsp;K = 0 }</p>
+<p>For example, for A = 6, B = 11 and K = 2, your function should return 3, because there are three numbers divisible by 2 within the range [6..11], namely 6, 8 and 10.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; A and B are integers within the range [0..2,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; K is an integer within the range [1..2,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; A &#8804; B.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(1);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1).</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/">PassingCars</a></h3>
+<p>Count the number of passing cars on the road.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on a road.</p>
+<p>Array A contains only 0s and/or 1s:</p>
+<p> &nbsp; &diams; &nbsp; 0 represents a car traveling east,</p>
+<p> &nbsp; &diams; &nbsp; 1 represents a car traveling west.</p>
+<p>The goal is to count passing cars. We say that a pair of cars (P, Q), where 0 &#8804; P &lt; Q &lt; N, is passing when P is traveling to the east and Q is traveling to the west.</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = 0 A[1] = 1 A[2] = 0 A[3] = 1 A[4] = 1</p>
+<p>We have five pairs of passing cars: (0, 1), (0, 3), (0, 4), (2, 3), (2, 4).</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A of N integers, returns the number of pairs of passing cars.</p>
+<p>The function should return &#8722;1 if the number of pairs of passing cars exceeds 1,000,000,000.</p>
+<p>For example, given:</p>
+<p>A[0] = 0 A[1] = 1 A[2] = 0 A[3] = 1 A[4] = 1</p>
+<p>the function should return 5, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer that can have one of the following values: 0, 1.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/">GenomicRangeQuery</a></h3>
+<p>Find the minimal nucleotide from a range of sequence DNA.</p>
+<p>A DNA sequence can be represented as a string consisting of the letters&nbsp;A,&nbsp;C,&nbsp;G&nbsp;and&nbsp;T, which correspond to the types of successive nucleotides in the sequence. Each nucleotide has an&nbsp;<i>impact factor</i>, which is an integer. Nucleotides of types&nbsp;A,&nbsp;C,&nbsp;G&nbsp;and&nbsp;T&nbsp;have impact factors of 1, 2, 3 and 4, respectively. You are going to answer several queries of the form: What is the minimal impact factor of nucleotides contained in a particular part of the given DNA sequence?</p>
+<p>The DNA sequence is given as a non-empty string S =&nbsp;S[0]S[1]...S[N-1]&nbsp;consisting of N characters. There are M queries, which are given in non-empty arrays P and Q, each consisting of M integers. The K-th query (0 &#8804; K &lt; M) requires you to find the minimal impact factor of nucleotides contained in the DNA sequence between positions P[K] and Q[K] (inclusive).</p>
+<p>For example, consider string S =&nbsp;CAGCCTA&nbsp;and arrays P, Q such that:</p>
+<p>P[0] = 2 Q[0] = 4 P[1] = 5 Q[1] = 5 P[2] = 0 Q[2] = 6</p>
+<p>The answers to these M = 3 queries are as follows:</p>
+<p> &nbsp; &diams; &nbsp; The part of the DNA between positions 2 and 4 contains nucleotides&nbsp;G&nbsp;and&nbsp;C&nbsp;(twice), whose impact factors are 3 and 2 respectively, so the answer is 2.</p>
+<p> &nbsp; &diams; &nbsp; The part between positions 5 and 5 contains a single nucleotide&nbsp;T, whose impact factor is 4, so the answer is 4.</p>
+<p> &nbsp; &diams; &nbsp; The part between positions 0 and 6 (the whole string) contains all nucleotides, in particular nucleotide&nbsp;A&nbsp;whose impact factor is 1, so the answer is 1.</p>
+<p>Write a function:</p>
+<p>class Solution { public int[] solution(string S, int[] P, int[] Q); }</p>
+<p>that, given a non-empty zero-indexed string S consisting of N characters and two non-empty zero-indexed arrays P and Q consisting of M integers, returns an array consisting of M integers specifying the consecutive answers to all queries.</p>
+<p>The sequence should be returned as:</p>
+<p> &nbsp; &diams; &nbsp; a Results structure (in C), or</p>
+<p> &nbsp; &diams; &nbsp; a vector of integers (in C++), or</p>
+<p> &nbsp; &diams; &nbsp; a Results record (in Pascal), or</p>
+<p> &nbsp; &diams; &nbsp; an array of integers (in any other programming language).</p>
+<p>For example, given the string S =&nbsp;CAGCCTA&nbsp;and arrays P, Q such that:</p>
+<p>P[0] = 2 Q[0] = 4 P[1] = 5 Q[1] = 5 P[2] = 0 Q[2] = 6</p>
+<p>the function should return the values [2, 4, 1], as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; M is an integer within the range [1..50,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays P, Q is an integer within the range [0..N &#8722; 1];</p>
+<p> &nbsp; &diams; &nbsp; P[K] &#8804; Q[K], where 0 &#8804; K &lt; M;</p>
+<p> &nbsp; &diams; &nbsp; string S consists only of upper-case English letters&nbsp;A, C, G, T.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N+M);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/">MinAvgTwoSlice</a></h3>
+<p>Find the minimal average of any slice containing at least two elements.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given. A pair of integers (P, Q), such that 0 &#8804; P &lt; Q &lt; N, is called a&nbsp;<i>slice</i>&nbsp;of array A (notice that the slice contains at least two elements). The&nbsp;<i>average</i>&nbsp;of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q &#8722; P + 1).</p>
+<p>For example, array A such that:</p>
+<p>A[0] = 4 A[1] = 2 A[2] = 2 A[3] = 5 A[4] = 1 A[5] = 5 A[6] = 8</p>
+<p>contains the following example slices:</p>
+<p> &nbsp; &diams; &nbsp; slice (1, 2), whose average is (2 + 2) / 2 = 2;</p>
+<p> &nbsp; &diams; &nbsp; slice (3, 4), whose average is (5 + 1) / 2 = 3;</p>
+<p> &nbsp; &diams; &nbsp; slice (1, 4), whose average is (2 + 2 + 5 + 1) / 4 = 2.5.</p>
+<p>The goal is to find the starting position of a slice whose average is minimal.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 4 A[1] = 2 A[2] = 2 A[3] = 5 A[4] = 1 A[5] = 5 A[6] = 8</p>
+<p>the function should return 1, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [2..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;10,000..10,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 6</h1>
+<h2>Sorting</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/6-sorting/distinct/">Distinct</a></h3>
+<p>Compute number of distinct values in an array.</p>
+<p>Write a function</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A consisting of N integers, returns the number of distinct values in array A.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000,000..1,000,000].</p>
+<p>For example, given array A consisting of six elements such that:</p>
+<p>A[0] = 2 A[1] = 1 A[2] = 1 A[3] = 2 A[4] = 3 A[5] = 1</p>
+<p>the function should return 3, because there are 3 distinct values appearing in array A, namely 1, 2 and 3.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/6-sorting/triangle/">Triangle</a></h3>
+<p>Determine whether a triangle can be built from a given set of edges.</p>
+<p>A zero-indexed array A consisting of N integers is given. A triplet (P, Q, R) is&nbsp;<i>triangular</i>&nbsp;if 0 &#8804; P &lt; Q &lt; R &lt; N and:</p>
+<p> &nbsp; &diams; &nbsp; A[P] + A[Q] &gt; A[R],</p>
+<p> &nbsp; &diams; &nbsp; A[Q] + A[R] &gt; A[P],</p>
+<p> &nbsp; &diams; &nbsp; A[R] + A[P] &gt; A[Q].</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = 10 A[1] = 2 A[2] = 5 A[3] = 1 A[4] = 8 A[5] = 20</p>
+<p>Triplet (0, 2, 4) is triangular.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A consisting of N integers, returns 1 if there exists a triangular triplet for this array and returns 0 otherwise.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 10 A[1] = 2 A[2] = 5 A[3] = 1 A[4] = 8 A[5] = 20</p>
+<p>the function should return 1, as explained above. Given array A such that:</p>
+<p>A[0] = 10 A[1] = 50 A[2] = 5 A[3] = 1</p>
+<p>the function should return 0.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;2,147,483,648..2,147,483,647].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/">MaxProductOfThree</a></h3>
+<p>Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given. The&nbsp;<i>product</i>&nbsp;of triplet (P, Q, R) equates to A[P] * A[Q] * A[R] (0 &#8804; P &lt; Q &lt; R &lt; N).</p>
+<p>For example, array A such that:</p>
+<p>A[0] = -3 A[1] = 1 A[2] = 2 A[3] = -2 A[4] = 5 A[5] = 6</p>
+<p>contains the following example triplets:</p>
+<p> &nbsp; &diams; &nbsp; (0, 1, 2), product is &#8722;3 * 1 * 2 = &#8722;6</p>
+<p> &nbsp; &diams; &nbsp; (1, 2, 4), product is 1 * 2 * 5 = 10</p>
+<p> &nbsp; &diams; &nbsp; (2, 4, 5), product is 2 * 5 * 6 = 60</p>
+<p>Your goal is to find the maximal product of any triplet.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A, returns the value of the maximal product of any triplet.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = -3 A[1] = 1 A[2] = 2 A[3] = -2 A[4] = 5 A[5] = 6</p>
+<p>the function should return 60, as the product of triplet (2, 4, 5) is maximal.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [3..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000..1,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/">NumberOfDiscIntersections</a></h3>
+<p>Compute the number of intersections in a sequence of discs.</p>
+<p>We draw N discs on a plane. The discs are numbered from 0 to N &#8722; 1. A zero-indexed array A of N non-negative integers, specifying the radiuses of the discs, is given. The J-th disc is drawn with its center at (J, 0) and radius A[J].</p>
+<p>We say that the J-th disc and K-th disc intersect if J &#8800; K and the J-th and K-th discs have at least one common point (assuming that the discs contain their borders).</p>
+<p>The figure below shows discs drawn for N = 6 and A as follows:</p>
+<p>A[0] = 1 A[1] = 5 A[2] = 2 A[3] = 1 A[4] = 4 A[5] = 0</p>
+<p><img width=308 height=230 src="Lessons_files/image001.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/number_of_disc_intersections/static/images/auto/0eed8918b13a735f4e396c9a87182a38.png"></p>
+<p>There are eleven (unordered) pairs of discs that intersect, namely:</p>
+<p> &nbsp; &diams; &nbsp; discs 1 and 4 intersect, and both intersect with all the other discs;</p>
+<p> &nbsp; &diams; &nbsp; disc 2 also intersects with discs 0 and 3.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given an array A describing N discs as explained above, returns the number of (unordered) pairs of intersecting discs. The function should return &#8722;1 if the number of intersecting pairs exceeds 10,000,000.</p>
+<p>Given array A shown above, the function should return 11, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [0..2,147,483,647].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 7</h1>
+<h2>Stacks and Queues</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/7-stacks_and_queues/stone_wall/">StoneWall</a></h3>
+<p>Cover &quot;Manhattan skyline&quot; using the minimum number of rectangles.</p>
+<p>You are going to build a stone wall. The wall should be straight and N meters long, and its thickness should be constant; however, it should have different heights in different places. The height of the wall is specified by a zero-indexed array H of N positive integers. H[I] is the height of the wall from I to I+1 meters to the right of its left end. In particular, H[0] is the height of the wall's left end and H[N&#8722;1] is the height of the wall's right end.</p>
+<p>The wall should be built of cuboid stone blocks (that is, all sides of such blocks are rectangular). Your task is to compute the minimum number of blocks needed to build the wall.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] H); }</p>
+<p>that, given a zero-indexed array H of N positive integers specifying the height of the wall, returns the minimum number of blocks needed to build it.</p>
+<p>For example, given array H containing N = 9 integers:</p>
+<p>H[0] = 8 H[1] = 8 H[2] = 5 H[3] = 7 H[4] = 9 H[5] = 8 H[6] = 7 H[7] = 4 H[8] = 8</p>
+<p>the function should return 7. The figure shows one possible arrangement of seven blocks.</p>
+<p><img width=104 height=104 src="Lessons_files/image002.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/stone_wall/static/images/auto/4f1cef49cc46d451e88109d449ab7975.png"></p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array H is an integer within the range [1..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/7-stacks_and_queues/brackets/">Brackets</a></h3>
+<p>Determine whether a given string of parentheses is properly nested.</p>
+<p>A string S consisting of N characters is considered to be&nbsp;<i>properly nested</i>&nbsp;if any of the following conditions is true:</p>
+<p> &nbsp; &diams; &nbsp; S is empty;</p>
+<p> &nbsp; &diams; &nbsp; S has the form &quot;(U)&quot; or &quot;[U]&quot; or &quot;{U}&quot; where U is a properly nested string;</p>
+<p> &nbsp; &diams; &nbsp; S has the form &quot;VW&quot; where V and W are properly nested strings.</p>
+<p>For example, the string &quot;{[()()]}&quot; is properly nested but &quot;([)()]&quot; is not.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(string S); }</p>
+<p>that, given a string S consisting of N characters, returns 1 if S is properly nested and 0 otherwise.</p>
+<p>For example, given S = &quot;{[()()]}&quot;, the function should return 1 and given S = &quot;([)()]&quot;, the function should return 0, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..200,000];</p>
+<p> &nbsp; &diams; &nbsp; string S consists only of the following characters: &quot;(&quot;, &quot;{&quot;, &quot;[&quot;, &quot;]&quot;, &quot;}&quot; and/or &quot;)&quot;.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N) (not counting the storage required for input arguments).</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/7-stacks_and_queues/nesting/">Nesting</a></h3>
+<p>Determine whether given string of parentheses is properly nested.</p>
+<p>A string S consisting of N characters is called&nbsp;<i>properly nested</i>&nbsp;if:</p>
+<p> &nbsp; &diams; &nbsp; S is empty;</p>
+<p> &nbsp; &diams; &nbsp; S has the form &quot;(U)&quot; where U is a properly nested string;</p>
+<p> &nbsp; &diams; &nbsp; S has the form &quot;VW&quot; where V and W are properly nested strings.</p>
+<p>For example, string &quot;(()(())())&quot; is properly nested but string &quot;())&quot; isn't.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(string S); }</p>
+<p>that, given a string S consisting of N characters, returns 1 if string S is properly nested and 0 otherwise.</p>
+<p>For example, given S = &quot;(()(())())&quot;, the function should return 1 and given S = &quot;())&quot;, the function should return 0, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..1,000,000];</p>
+<p> &nbsp; &diams; &nbsp; string S consists only of the characters &quot;(&quot; and/or &quot;)&quot;.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1) (not counting the storage required for input arguments).</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/7-stacks_and_queues/fish/">Fish</a></h3>
+<p>N voracious fish are moving along a river. Calculate how many fish are alive.</p>
+<p>You are given two non-empty zero-indexed arrays A and B consisting of N integers. Arrays A and B represent N voracious fish in a river, ordered downstream along the flow of the river.</p>
+<p>The fish are numbered from 0 to N &#8722; 1. If P and Q are two fish and P &lt; Q, then fish P is initially upstream of fish Q. Initially, each fish has a unique position.</p>
+<p>Fish number P is represented by A[P] and B[P]. Array A contains the sizes of the fish. All its elements are unique. Array B contains the directions of the fish. It contains only 0s and/or 1s, where:</p>
+<p> &nbsp; &diams; &nbsp; 0 represents a fish flowing upstream,</p>
+<p> &nbsp; &diams; &nbsp; 1 represents a fish flowing downstream.</p>
+<p>If two fish move in opposite directions and there are no other (living) fish between them, they will eventually meet each other. Then only one fish can stay alive &#8722; the larger fish eats the smaller one. More precisely, we say that two fish P and Q meet each other when P &lt; Q, B[P] = 1 and B[Q] = 0, and there are no living fish between them. After they meet:</p>
+<p> &nbsp; &diams; &nbsp; If A[P] &gt; A[Q] then P eats Q, and P will still be flowing downstream,</p>
+<p> &nbsp; &diams; &nbsp; If A[Q] &gt; A[P] then Q eats P, and Q will still be flowing upstream.</p>
+<p>We assume that all the fish are flowing at the same speed. That is, fish moving in the same direction never meet. The goal is to calculate the number of fish that will stay alive.</p>
+<p>For example, consider arrays A and B such that:</p>
+<p>A[0] = 4 B[0] = 0 A[1] = 3 B[1] = 1 A[2] = 2 B[2] = 0 A[3] = 1 B[3] = 0 A[4] = 5 B[4] = 0</p>
+<p>Initially all the fish are alive and all except fish number 1 are moving upstream. Fish number 1 meets fish number 2 and eats it, then it meets fish number 3 and eats it too. Finally, it meets fish number 4 and is eaten by it. The remaining two fish, number 0 and 4, never meet and therefore stay alive.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A, int[] B); }</p>
+<p>that, given two non-empty zero-indexed arrays A and B consisting of N integers, returns the number of fish that will stay alive.</p>
+<p>For example, given the arrays shown above, the function should return 2, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [0..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array B is an integer that can have one of the following values: 0, 1;</p>
+<p> &nbsp; &diams; &nbsp; the elements of A are all distinct.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 8</h1>
+<h2>Leader</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/8-leader/equi_leader/">EquiLeader</a></h3>
+<p>Find the index S such that the leaders of the sequences A[0], A[1], ..., A[S] and A[S + 1], A[S + 2], ..., A[N - 1] are the same.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given.</p>
+<p>The&nbsp;<i>leader</i>&nbsp;of this array is the value that occurs in more than half of the elements of A.</p>
+<p>An&nbsp;<i>equi leader</i>&nbsp;is an index S such that 0 &#8804; S &lt; N &#8722; 1 and two sequences A[0], A[1], ..., A[S] and A[S + 1], A[S + 2], ..., A[N &#8722; 1] have leaders of the same value.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 4 A[1] = 3 A[2] = 4 A[3] = 4 A[4] = 4 A[5] = 2</p>
+<p>we can find two equi leaders:</p>
+<p> &nbsp; &diams; &nbsp; 0, because sequences: (4) and (3, 4, 4, 4, 2) have the same leader, whose value is 4.</p>
+<p> &nbsp; &diams; &nbsp; 2, because sequences: (4, 3, 4) and (4, 4, 2) have the same leader, whose value is 4.</p>
+<p>The goal is to count the number of equi leaders.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers, returns the number of equi leaders.</p>
+<p>For example, given:</p>
+<p>A[0] = 4 A[1] = 3 A[2] = 4 A[3] = 4 A[4] = 4 A[5] = 2</p>
+<p>the function should return 2, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000,000,000..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/8-leader/dominator/">Dominator</a></h3>
+<p>Find an index of an array such that its value occurs at more than half of indices in the array.</p>
+<p>A zero-indexed array A consisting of N integers is given. The&nbsp;<i>dominator</i>&nbsp;of array A is the value that occurs in more than half of the elements of A.</p>
+<p>For example, consider array A such that</p>
+<p>A[0] = 3 A[1] = 4 A[2] = 3 A[3] = 2 A[4] = 3 A[5] = -1 A[6] = 3 A[7] = 3</p>
+<p>The dominator of A is 3 because it occurs in 5 out of 8 elements of A (namely in those with indices 0, 2, 4, 6 and 7) and 5 is more than a half of 8.</p>
+<p>Write a function</p>
+<p>int solution(int A[], int N);</p>
+<p>that, given a zero-indexed array A consisting of N integers, returns index of any element of array A in which the dominator of A occurs. The function should return &#8722;1 if array A does not have a dominator.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;2,147,483,648..2,147,483,647].</p>
+<p>For example, given array A such that</p>
+<p>A[0] = 3 A[1] = 4 A[2] = 3 A[3] = 2 A[4] = 3 A[5] = -1 A[6] = 3 A[7] = 3</p>
+<p>the function may return 0, 2, 4, 6 or 7, as explained above.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 9</h1>
+<h2>Maximum slice problem</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_double_slice_sum/">MaxDoubleSliceSum</a></h3>
+<p>Find the maximal sum of any double slice.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given.</p>
+<p>A triplet (X, Y, Z), such that 0 &#8804; X &lt; Y &lt; Z &lt; N, is called a&nbsp;<i>double slice</i>.</p>
+<p>The&nbsp;<i>sum</i>&nbsp;of double slice (X, Y, Z) is the total of A[X + 1] + A[X + 2] + ... + A[Y &#8722; 1] + A[Y + 1] + A[Y + 2] + ... + A[Z &#8722; 1].</p>
+<p>For example, array A such that:</p>
+<p>A[0] = 3 A[1] = 2 A[2] = 6 A[3] = -1 A[4] = 4 A[5] = 5 A[6] = -1 A[7] = 2</p>
+<p>contains the following example double slices:</p>
+<p> &nbsp; &diams; &nbsp; double slice (0, 3, 6), sum is 2 + 6 + 4 + 5 = 17,</p>
+<p> &nbsp; &diams; &nbsp; double slice (0, 3, 7), sum is 2 + 6 + 4 + 5 &#8722; 1 = 16,</p>
+<p> &nbsp; &diams; &nbsp; double slice (3, 4, 5), sum is 0.</p>
+<p>The goal is to find the maximal sum of any double slice.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers, returns the maximal sum of any double slice.</p>
+<p>For example, given:</p>
+<p>A[0] = 3 A[1] = 2 A[2] = 6 A[3] = -1 A[4] = 4 A[5] = 5 A[6] = -1 A[7] = 2</p>
+<p>the function should return 17, because no double slice of array A has a sum of greater than 17.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [3..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;10,000..10,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_profit/">MaxProfit</a></h3>
+<p>Given a log of stock prices compute the maximum possible earning.</p>
+<p>A zero-indexed array A consisting of N integers is given. It contains daily prices of a stock share for a period of N consecutive days. If a single share was bought on day P and sold on day Q, where 0 &#8804; P &#8804; Q &lt; N, then the&nbsp;<i>profit</i>&nbsp;of such transaction is equal to A[Q] &#8722; A[P], provided that A[Q] &#8805; A[P]. Otherwise, the transaction brings&nbsp;<i>loss</i>&nbsp;of A[P] &#8722; A[Q].</p>
+<p>For example, consider the following array A consisting of six elements such that:</p>
+<p>A[0] = 23171 A[1] = 21011 A[2] = 21123 A[3] = 21366 A[4] = 21013 A[5] = 21367</p>
+<p>If a share was bought on day 0 and sold on day 2, a loss of 2048 would occur because A[2] &#8722; A[0] = 21123 &#8722; 23171 = &#8722;2048. If a share was bought on day 4 and sold on day 5, a profit of 354 would occur because A[5] &#8722; A[4] = 21367 &#8722; 21013 = 354. Maximum possible profit was 356. It would occur if a share was bought on day 1 and sold on day 5.</p>
+<p>Write a function,</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A consisting of N integers containing daily prices of a stock share for a period of N consecutive days, returns the maximum possible profit from one transaction during this period. The function should return 0 if it was impossible to gain any profit.</p>
+<p>For example, given array A consisting of six elements such that:</p>
+<p>A[0] = 23171 A[1] = 21011 A[2] = 21123 A[3] = 21366 A[4] = 21013 A[5] = 21367</p>
+<p>the function should return 356, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..400,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [0..200,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_slice_sum/">MaxSliceSum</a></h3>
+<p>Find a maximum sum of a compact subsequence of array elements.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given. A pair of integers (P, Q), such that 0 &#8804; P &#8804; Q &lt; N, is called a&nbsp;<i>slice</i>&nbsp;of array A. The&nbsp;<i>sum</i>&nbsp;of a slice (P, Q) is the total of A[P] + A[P+1] + ... + A[Q].</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given an array A consisting of N integers, returns the maximum sum of any slice of A.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 3 A[1] = 2 A[2] = -6 A[3] = 4 A[4] = 0</p>
+<p>the function should return 5 because:</p>
+<p> &nbsp; &diams; &nbsp; (3, 4) is a slice of A that has sum 4,</p>
+<p> &nbsp; &diams; &nbsp; (2, 2) is a slice of A that has sum &#8722;6,</p>
+<p> &nbsp; &diams; &nbsp; (0, 1) is a slice of A that has sum 5,</p>
+<p> &nbsp; &diams; &nbsp; no other slice of A has sum greater than (0, 1).</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..1,000,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000,000..1,000,000];</p>
+<p> &nbsp; &diams; &nbsp; the result will be an integer within the range [&#8722;2,147,483,648..2,147,483,647].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 10</h1>
+<h2>Prime and composite numbers</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/min_perimeter_rectangle/">MinPerimeterRectangle</a></h3>
+<p>Find the minimal perimeter of any rectangle whose area equals N.</p>
+<p>An integer N is given, representing the area of some rectangle.</p>
+<p>The&nbsp;<i>area</i>&nbsp;of a rectangle whose sides are of length A and B is A * B, and the&nbsp;<i>perimeter</i>&nbsp;is 2 * (A + B).</p>
+<p>The goal is to find the minimal perimeter of any rectangle whose area equals N. The sides of this rectangle should be only integers.</p>
+<p>For example, given integer N = 30, rectangles of area 30 are:</p>
+<p> &nbsp; &diams; &nbsp; (1, 30), with a perimeter of 62,</p>
+<p> &nbsp; &diams; &nbsp; (2, 15), with a perimeter of 34,</p>
+<p> &nbsp; &diams; &nbsp; (3, 10), with a perimeter of 26,</p>
+<p> &nbsp; &diams; &nbsp; (5, 6), with a perimeter of 22.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int N); }</p>
+<p>that, given an integer N, returns the minimal perimeter of any rectangle whose area is exactly equal to N.</p>
+<p>For example, given an integer N = 30, the function should return 22, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(sqrt(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1).</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/count_factors/">CountFactors</a></h3>
+<p>Count factors of given number n.</p>
+<p>A positive integer D is a&nbsp;<i>factor</i>&nbsp;of a positive integer N if there exists an integer M such that N = D * M.</p>
+<p>For example, 6 is a factor of 24, because M = 4 satisfies the above condition (24 = 6 * 4).</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int N); }</p>
+<p>that, given a positive integer N, returns the number of its factors.</p>
+<p>For example, given N = 24, the function should return 8, because 24 has 8 factors, namely 1, 2, 3, 4, 6, 8, 12, 24. There are no other factors of 24.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..2,147,483,647].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(sqrt(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1).</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/peaks/">Peaks</a></h3>
+<p>Divide an array into the maximum number of same-sized blocks, each of which should contain an index P such that A[P - 1] &lt; A[P] &gt; A[P + 1].</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given.</p>
+<p>A&nbsp;<i>peak</i>&nbsp;is an array element which is larger than its neighbors. More precisely, it is an index P such that 0 &lt; P &lt; N &#8722; 1,&nbsp; A[P &#8722; 1] &lt; A[P] and A[P] &gt; A[P + 1].</p>
+<p>For example, the following array A:</p>
+<p>A[0] = 1 A[1] = 2 A[2] = 3 A[3] = 4 A[4] = 3 A[5] = 4 A[6] = 1 A[7] = 2 A[8] = 3 A[9] = 4 A[10] = 6 A[11] = 2</p>
+<p>has exactly three peaks: 3, 5, 10.</p>
+<p>We want to divide this array into blocks containing the same number of elements. More precisely, we want to choose a number K that will yield the following blocks:</p>
+<p> &nbsp; &diams; &nbsp; A[0], A[1], ..., A[K &#8722; 1],</p>
+<p> &nbsp; &diams; &nbsp; A[K], A[K + 1], ..., A[2K &#8722; 1],
+<br> ...</p>
+<p> &nbsp; &diams; &nbsp; A[N &#8722; K], A[N &#8722; K + 1], ..., A[N &#8722; 1].</p>
+<p>What's more, every block should contain at least one peak. Notice that extreme elements of the blocks (for example A[K &#8722; 1] or A[K]) can also be peaks, but only if they have both neighbors (including one in an adjacent blocks).</p>
+<p>The goal is to find the maximum number of blocks into which the array A can be divided.</p>
+<p>Array A can be divided into blocks as follows:</p>
+<p> &nbsp; &diams; &nbsp; one block (1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2). This block contains three peaks.</p>
+<p> &nbsp; &diams; &nbsp; two blocks (1, 2, 3, 4, 3, 4) and (1, 2, 3, 4, 6, 2). Every block has a peak.</p>
+<p> &nbsp; &diams; &nbsp; three blocks (1, 2, 3, 4), (3, 4, 1, 2), (3, 4, 6, 2). Every block has a peak. Notice in particular that the first block (1, 2, 3, 4) has a peak at A[3], because A[2] &lt; A[3] &gt; A[4], even though A[4] is in the adjacent block.</p>
+<p>However, array A cannot be divided into four blocks, (1, 2, 3), (4, 3, 4), (1, 2, 3) and (4, 6, 2), because the (1, 2, 3) blocks do not contain a peak. Notice in particular that the (4, 3, 4) block contains two peaks: A[3] and A[5].</p>
+<p>The maximum number of blocks that array A can be divided into is three.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers, returns the maximum number of blocks into which A can be divided.</p>
+<p>If A cannot be divided into some number of blocks, the function should return 0.</p>
+<p>For example, given:</p>
+<p>A[0] = 1 A[1] = 2 A[2] = 3 A[3] = 4 A[4] = 3 A[5] = 4 A[6] = 1 A[7] = 2 A[8] = 3 A[9] = 4 A[10] = 6 A[11] = 2</p>
+<p>the function should return 3, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [0..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(log(N)));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/flags/">Flags</a></h3>
+<p>Find the maximum number of flags that can be set on mountain peaks.</p>
+<p>A non-empty zero-indexed array A consisting of N integers is given.</p>
+<p>A&nbsp;<i>peak</i>&nbsp;is an array element which is larger than its neighbours. More precisely, it is an index P such that 0 &lt; P &lt; N &#8722; 1 and A[P &#8722; 1] &lt; A[P] &gt; A[P + 1].</p>
+<p>For example, the following array A:</p>
+<p>A[0] = 1 A[1] = 5 A[2] = 3 A[3] = 4 A[4] = 3 A[5] = 4 A[6] = 1 A[7] = 2 A[8] = 3 A[9] = 4 A[10] = 6 A[11] = 2</p>
+<p>has exactly four peaks: elements 1, 3, 5 and 10.</p>
+<p>You are going on a trip to a range of mountains whose relative heights are represented by array A, as shown in a figure below. You have to choose how many flags you should take with you. The goal is to set the maximum number of flags on the peaks, according to certain rules.</p>
+<p><img width=318 height=161 src="Lessons_files/image003.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/flags/static/images/auto/6f5e8faa3000c0a74157e6e0bc759b8a.png"></p>
+<p>Flags can only be set on peaks. What's more, if you take K flags, then the distance between any two flags should be greater than or equal to K. The distance between indices P and Q is the absolute value |P &#8722; Q|.</p>
+<p>For example, given the mountain range represented by array A, above, with N = 12, if you take:</p>
+<p> &nbsp; &diams; &nbsp; two flags, you can set them on peaks 1 and 5;</p>
+<p> &nbsp; &diams; &nbsp; three flags, you can set them on peaks 1, 5 and 10;</p>
+<p> &nbsp; &diams; &nbsp; four flags, you can set only three flags, on peaks 1, 5 and 10.</p>
+<p>You can therefore set a maximum of three flags in this case.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A of N integers, returns the maximum number of flags that can be set on the peaks of the array.</p>
+<p>For example, the following array A:</p>
+<p>A[0] = 1 A[1] = 5 A[2] = 3 A[3] = 4 A[4] = 3 A[5] = 4 A[6] = 1 A[7] = 2 A[8] = 3 A[9] = 4 A[10] = 6 A[11] = 2</p>
+<p>the function should return 3, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..400,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [0..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 11</h1>
+<h2>Sieve of Eratosthenes</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/11-sieve_of_eratosthenes/count_semiprimes/">CountSemiprimes</a></h3>
+<p>Count the semiprime numbers in the given range [a..b]</p>
+<p>A&nbsp;<i>prime</i>&nbsp;is a positive integer X that has exactly two distinct divisors: 1 and X. The first few prime integers are 2, 3, 5, 7, 11 and 13.</p>
+<p>A&nbsp;<i>semiprime</i>&nbsp;is a natural number that is the product of two (not necessarily distinct) prime numbers. The first few semiprimes are 4, 6, 9, 10, 14, 15, 21, 22, 25, 26.</p>
+<p>You are given two non-empty zero-indexed arrays P and Q, each consisting of M integers. These arrays represent queries about the number of semiprimes within specified ranges.</p>
+<p>Query K requires you to find the number of semiprimes within the range (P[K], Q[K]), where 1 &#8804; P[K] &#8804; Q[K] &#8804; N.</p>
+<p>For example, consider an integer N = 26 and arrays P, Q such that:</p>
+<p>P[0] = 1 Q[0] = 26 P[1] = 4 Q[1] = 10 P[2] = 16 Q[2] = 20</p>
+<p>The number of semiprimes within each of these ranges is as follows:</p>
+<p> &nbsp; &diams; &nbsp; (1, 26) is 10,</p>
+<p> &nbsp; &diams; &nbsp; (4, 10) is 4,</p>
+<p> &nbsp; &diams; &nbsp; (16, 20) is 0.</p>
+<p>Write a function:</p>
+<p>class Solution { public int[] solution(int N, int[] P, int[] Q); }</p>
+<p>that, given an integer N and two non-empty zero-indexed arrays P and Q consisting of M integers, returns an array consisting of M elements specifying the consecutive answers to all the queries.</p>
+<p>For example, given an integer N = 26 and arrays P, Q such that:</p>
+<p>P[0] = 1 Q[0] = 26 P[1] = 4 Q[1] = 10 P[2] = 16 Q[2] = 20</p>
+<p>the function should return the values [10, 4, 0], as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..50,000];</p>
+<p> &nbsp; &diams; &nbsp; M is an integer within the range [1..30,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays P, Q is an integer within the range [1..N];</p>
+<p> &nbsp; &diams; &nbsp; P[i] &#8804; Q[i].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(log(N))+M);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N+M), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/11-sieve_of_eratosthenes/count_non_divisible/">CountNonDivisible</a></h3>
+<p>Calculate the number of elements of an array that are not divisors of each element.</p>
+<p>You are given a non-empty zero-indexed array A consisting of N integers.</p>
+<p>For each number A[i] such that 0 &#8804; i &lt; N, we want to count the number of elements of the array that are not the divisors of A[i]. We say that these elements are non-divisors.</p>
+<p>For example, consider integer N = 5 and array A such that:</p>
+<p>A[0] = 3 A[1] = 1 A[2] = 2 A[3] = 3 A[4] = 6</p>
+<p>For the following elements:</p>
+<p> &nbsp; &diams; &nbsp; A[0] = 3, the non-divisors are: 2, 6,</p>
+<p> &nbsp; &diams; &nbsp; A[1] = 1, the non-divisors are: 3, 2, 3, 6,</p>
+<p> &nbsp; &diams; &nbsp; A[2] = 2, the non-divisors are: 3, 3, 6,</p>
+<p> &nbsp; &diams; &nbsp; A[3] = 3, the non-divisors are: 2, 6,</p>
+<p> &nbsp; &diams; &nbsp; A[4] = 6, there aren't any non-divisors.</p>
+<p>Write a function:</p>
+<p>class Solution { public int[] solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers, returns a sequence of integers representing the amount of non-divisors.</p>
+<p>The sequence should be returned as:</p>
+<p> &nbsp; &diams; &nbsp; a structure Results (in C), or</p>
+<p> &nbsp; &diams; &nbsp; a vector of integers (in C++), or</p>
+<p> &nbsp; &diams; &nbsp; a record Results (in Pascal), or</p>
+<p> &nbsp; &diams; &nbsp; an array of integers (in any other programming language).</p>
+<p>For example, given:</p>
+<p>A[0] = 3 A[1] = 1 A[2] = 2 A[3] = 3 A[4] = 6</p>
+<p>the function should return [2, 4, 3, 2, 0], as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..50,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..2 * N].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 12</h1>
+<h2>Euclidean algorithm</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/12-euclidean_algorithm/chocolates_by_numbers/">ChocolatesByNumbers</a></h3>
+<p>There are N chocolates in a circle. Count the number of chocolates you will eat.</p>
+<p>Two positive integers N and M are given. Integer N represents the number of chocolates arranged in a circle, numbered from 0 to N &#8722; 1.</p>
+<p>You start to eat the chocolates. After eating a chocolate you leave only a wrapper.</p>
+<p>You begin with eating chocolate number 0. Then you omit the next M &#8722; 1 chocolates or wrappers on the circle, and eat the following one.</p>
+<p>More precisely, if you ate chocolate number X, then you will next eat the chocolate with number (X + M) modulo N (remainder of division).</p>
+<p>You stop eating when you encounter an empty wrapper.</p>
+<p>For example, given integers N = 10 and M = 4. You will eat the following chocolates: 0, 4, 8, 2, 6.</p>
+<p>The goal is to count the number of chocolates that you will eat, following the above rules.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int N, int M); }</p>
+<p>that, given two positive integers N and M, returns the number of chocolates that you will eat.</p>
+<p>For example, given integers N = 10 and M = 4. the function should return 5, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N and M are integers within the range [1..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(log(N+M));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(log(N+M)).</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/12-euclidean_algorithm/common_prime_divisors/">CommonPrimeDivisors</a></h3>
+<p>Check whether two numbers have the same prime divisors.</p>
+<p>A&nbsp;<i>prime</i>&nbsp;is a positive integer X that has exactly two distinct divisors: 1 and X. The first few prime integers are 2, 3, 5, 7, 11 and 13.</p>
+<p>A prime D is called a&nbsp;<i>prime divisor</i>&nbsp;of a positive integer P if there exists a positive integer K such that D * K = P. For example, 2 and 5 are prime divisors of 20.</p>
+<p>You are given two positive integers N and M. The goal is to check whether the sets of prime divisors of integers N and M are exactly the same.</p>
+<p>For example, given:</p>
+<p> &nbsp; &diams; &nbsp; N = 15 and M = 75, the prime divisors are the same: {3, 5};</p>
+<p> &nbsp; &diams; &nbsp; N = 10 and M = 30, the prime divisors aren't the same: {2, 5} is not equal to {2, 3, 5};</p>
+<p> &nbsp; &diams; &nbsp; N = 9 and M = 5, the prime divisors aren't the same: {3} is not equal to {5}.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A, int[] B); }</p>
+<p>that, given two non-empty zero-indexed arrays A and B of Z integers, returns the number of positions K for which the prime divisors of A[K] and B[K] are exactly the same.</p>
+<p>For example, given:</p>
+<p>A[0] = 15 B[0] = 75 A[1] = 10 B[1] = 30 A[2] = 3 B[2] = 5</p>
+<p>the function should return 1, because only one pair (15, 75) has the same set of prime divisors.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; Z is an integer within the range [1..6,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays A, B is an integer within the range [1..2,147,483,647].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(Z*log(max(A)+max(B))<sup>2</sup>);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 13</h1>
+<h2>Fibonacci numbers</h2>
+
+<h3><a href="https://app.codility.com/programmers/lessons/13-fibonacci_numbers/ladder/">Ladder</a></h3>
+<p>Count the number of different ways of climbing to the top of a ladder.</p>
+<p>You have to climb up a ladder. The ladder has exactly N rungs, numbered from 1 to N. With each step, you can ascend by one or two rungs. More precisely:</p>
+<p> &nbsp; &diams; &nbsp; with your first step you can stand on rung 1 or 2,</p>
+<p> &nbsp; &diams; &nbsp; if you are on rung K, you can move to rungs K + 1 or K + 2,</p>
+<p> &nbsp; &diams; &nbsp; finally you have to stand on rung N.</p>
+<p>Your task is to count the number of different ways of climbing to the top of the ladder.</p>
+<p>For example, given N = 4, you have five different ways of climbing, ascending by:</p>
+<p> &nbsp; &diams; &nbsp; 1, 1, 1 and 1 rung,</p>
+<p> &nbsp; &diams; &nbsp; 1, 1 and 2 rungs,</p>
+<p> &nbsp; &diams; &nbsp; 1, 2 and 1 rung,</p>
+<p> &nbsp; &diams; &nbsp; 2, 1 and 1 rungs, and</p>
+<p> &nbsp; &diams; &nbsp; 2 and 2 rungs.</p>
+<p>Given N = 5, you have eight different ways of climbing, ascending by:</p>
+<p> &nbsp; &diams; &nbsp; 1, 1, 1, 1 and 1 rung,</p>
+<p> &nbsp; &diams; &nbsp; 1, 1, 1 and 2 rungs,</p>
+<p> &nbsp; &diams; &nbsp; 1, 1, 2 and 1 rung,</p>
+<p> &nbsp; &diams; &nbsp; 1, 2, 1 and 1 rung,</p>
+<p> &nbsp; &diams; &nbsp; 1, 2 and 2 rungs,</p>
+<p> &nbsp; &diams; &nbsp; 2, 1, 1 and 1 rungs,</p>
+<p> &nbsp; &diams; &nbsp; 2, 1 and 2 rungs, and</p>
+<p> &nbsp; &diams; &nbsp; 2, 2 and 1 rung.</p>
+<p>The number of different ways can be very large, so it is sufficient to return the result modulo 2<sup>P</sup>, for a given integer P.</p>
+<p>Write a function:</p>
+<p>class Solution { public int[] solution(int[] A, int[] B); }</p>
+<p>that, given two non-empty zero-indexed arrays A and B of L integers, returns an array consisting of L integers specifying the consecutive answers; position I should contain the number of different ways of climbing the ladder with A[I] rungs modulo 2<sup>B[I]</sup>.</p>
+<p>For example, given L = 5 and:</p>
+<p>A[0] = 4 B[0] = 3 A[1] = 4 B[1] = 2 A[2] = 5 B[2] = 4 A[3] = 5 B[3] = 3 A[4] = 1 B[4] = 1</p>
+<p>the function should return the sequence [5, 1, 8, 0, 1], as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; L is an integer within the range [1..50,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..L];</p>
+<p> &nbsp; &diams; &nbsp; each element of array B is an integer within the range [1..30].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(L);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(L), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/13-fibonacci_numbers/fib_frog/">FibFrog</a></h3>
+<p>Count the minimum number of jumps required for a frog to get to the other side of a river.</p>
+<p>The Fibonacci sequence is defined using the following recursive formula:</p>
+<p>F(0) = 0 F(1) = 1 F(M) = F(M - 1) + F(M - 2) if M &gt;= 2</p>
+<p>A small frog wants to get to the other side of a river. The frog is initially located at one bank of the river (position &#8722;1) and wants to get to the other bank (position N). The frog can jump over any distance F(K), where F(K) is the K-th Fibonacci number. Luckily, there are many leaves on the river, and the frog can jump between the leaves, but only in the direction of the bank at position N.</p>
+<p>The leaves on the river are represented in a zero-indexed array A consisting of N integers. Consecutive elements of array A represent consecutive positions from 0 to N &#8722; 1 on the river. Array A contains only 0s and/or 1s:</p>
+<p> &nbsp; &diams; &nbsp; 0 represents a position without a leaf;</p>
+<p> &nbsp; &diams; &nbsp; 1 represents a position containing a leaf.</p>
+<p>The goal is to count the minimum number of jumps in which the frog can get to the other side of the river (from position &#8722;1 to position N). The frog can jump between positions &#8722;1 and N (the banks of the river) and every position containing a leaf.</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = 0 A[1] = 0 A[2] = 0 A[3] = 1 A[4] = 1 A[5] = 0 A[6] = 1 A[7] = 0 A[8] = 0 A[9] = 0 A[10] = 0</p>
+<p>The frog can make three jumps of length F(5) = 5, F(3) = 2 and F(5) = 5.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A consisting of N integers, returns the minimum number of jumps by which the frog can get to the other side of the river. If the frog cannot reach the other side of the river, the function should return &#8722;1.</p>
+<p>For example, given:</p>
+<p>A[0] = 0 A[1] = 0 A[2] = 0 A[3] = 1 A[4] = 1 A[5] = 0 A[6] = 1 A[7] = 0 A[8] = 0 A[9] = 0 A[10] = 0</p>
+<p>the function should return 3, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer that can have one of the following values: 0, 1.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 14</h1>
+<h2>Binary search algorithm</h2>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/14-binary_search_algorithm/min_max_division/">MinMaxDivision</a></h3>
+<p>Divide array A into K blocks and minimize the largest sum of any block.</p>
+<p>You are given integers K, M and a non-empty zero-indexed array A consisting of N integers. Every element of the array is not greater than M.</p>
+<p>You should divide this array into K blocks of consecutive elements. The size of the block is any integer between 0 and N. Every element of the array should belong to some block.</p>
+<p>The sum of the block from X to Y equals A[X] + A[X + 1] + ... + A[Y]. The sum of empty block equals 0.</p>
+<p>The&nbsp;<i>large sum</i>&nbsp;is the maximal sum of any block.</p>
+<p>For example, you are given integers K = 3, M = 5 and array A such that:</p>
+<p>A[0] = 2 A[1] = 1 A[2] = 5 A[3] = 1 A[4] = 2 A[5] = 2 A[6] = 2</p>
+<p>The array can be divided, for example, into the following blocks:</p>
+<p> &nbsp; &diams; &nbsp; [2, 1, 5, 1, 2, 2, 2], [], [] with a large sum of 15;</p>
+<p> &nbsp; &diams; &nbsp; [2], [1, 5, 1, 2], [2, 2] with a large sum of 9;</p>
+<p> &nbsp; &diams; &nbsp; [2, 1, 5], [], [1, 2, 2, 2] with a large sum of 8;</p>
+<p> &nbsp; &diams; &nbsp; [2, 1], [5, 1], [2, 2, 2] with a large sum of 6.</p>
+<p>The goal is to minimize the large sum. In the above example, 6 is the minimal large sum.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int K, int M, int[] A); }</p>
+<p>that, given integers K, M and a non-empty zero-indexed array A consisting of N integers, returns the minimal large sum.</p>
+<p>For example, given K = 3, M = 5 and array A such that:</p>
+<p>A[0] = 2 A[1] = 1 A[2] = 5 A[3] = 1 A[4] = 2 A[5] = 2 A[6] = 2</p>
+<p>the function should return 6, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N and K are integers within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; M is an integer within the range [0..10,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [0..M].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N+M));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/14-binary_search_algorithm/nailing_planks/">NailingPlanks</a></h3>
+<p>Count the minimum number of nails that allow a series of planks to be nailed.</p>
+<p>You are given two non-empty zero-indexed arrays A and B consisting of N integers. These arrays represent N planks. More precisely, A[K] is the start and B[K] the end of the K&#8722;th plank.</p>
+<p>Next, you are given a non-empty zero-indexed array C consisting of M integers. This array represents M nails. More precisely, C[I] is the position where you can hammer in the I&#8722;th nail.</p>
+<p>We say that a plank (A[K], B[K]) is nailed if there exists a nail C[I] such that A[K] &#8804; C[I] &#8804; B[K].</p>
+<p>The goal is to find the minimum number of nails that must be used until all the planks are nailed. In other words, you should find a value J such that all planks will be nailed after using only the first J nails. More precisely, for every plank (A[K], B[K]) such that 0 &#8804; K &lt; N, there should exist a nail C[I] such that I &lt; J and A[K] &#8804; C[I] &#8804; B[K].</p>
+<p>For example, given arrays A, B such that:</p>
+<p>A[0] = 1 B[0] = 4 A[1] = 4 B[1] = 5 A[2] = 5 B[2] = 9 A[3] = 8 B[3] = 10</p>
+<p>four planks are represented: [1, 4], [4, 5], [5, 9] and [8, 10].</p>
+<p>Given array C such that:</p>
+<p>C[0] = 4 C[1] = 6 C[2] = 7 C[3] = 10 C[4] = 2</p>
+<p>if we use the following nails:</p>
+<p> &nbsp; &diams; &nbsp; 0, then planks [1, 4] and [4, 5] will both be nailed.</p>
+<p> &nbsp; &diams; &nbsp; 0, 1, then planks [1, 4], [4, 5] and [5, 9] will be nailed.</p>
+<p> &nbsp; &diams; &nbsp; 0, 1, 2, then planks [1, 4], [4, 5] and [5, 9] will be nailed.</p>
+<p> &nbsp; &diams; &nbsp; 0, 1, 2, 3, then all the planks will be nailed.</p>
+<p>Thus, four is the minimum number of nails that, used sequentially, allow all the planks to be nailed.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A, int[] B, int[] C); }</p>
+<p>that, given two non-empty zero-indexed arrays A and B consisting of N integers and a non-empty zero-indexed array C consisting of M integers, returns the minimum number of nails that, used sequentially, allow all the planks to be nailed.</p>
+<p>If it is not possible to nail all the planks, the function should return &#8722;1.</p>
+<p>For example, given arrays A, B, C such that:</p>
+<p>A[0] = 1 B[0] = 4 A[1] = 4 B[1] = 5 A[2] = 5 B[2] = 9 A[3] = 8 B[3] = 10 C[0] = 4 C[1] = 6 C[2] = 7 C[3] = 10 C[4] = 2</p>
+<p>the function should return 4, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N and M are integers within the range [1..30,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays A, B, C is an integer within the range [1..2*M];</p>
+<p> &nbsp; &diams; &nbsp; A[K] &#8804; B[K].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O((N+M)*log(M));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(M), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 15</h1>
+<h2>Caterpillar method</h2>
+<p>PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/15-caterpillar_method/abs_distinct/">AbsDistinct</a></h3>
+<p>Compute number of distinct absolute values of sorted array elements.</p>
+<p>A non-empty zero-indexed array A consisting of N numbers is given. The array is sorted in non-decreasing order. The&nbsp;<i>absolute distinct count</i>&nbsp;of this array is the number of distinct absolute values among the elements of the array.</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = -5 A[1] = -3 A[2] = -1 A[3] = 0 A[4] = 3 A[5] = 6</p>
+<p>The absolute distinct count of this array is 5, because there are 5 distinct absolute values among the elements of this array, namely 0, 1, 3, 5 and 6.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N numbers, returns absolute distinct count of array A.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = -5 A[1] = -3 A[2] = -1 A[3] = 0 A[4] = 3 A[5] = 6</p>
+<p>the function should return 5, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;2,147,483,648..2,147,483,647];</p>
+<p> &nbsp; &diams; &nbsp; array A is sorted in non-decreasing order.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/15-caterpillar_method/count_distinct_slices/">CountDistinctSlices</a></h3>
+<p>Count the number of distinct slices (containing only unique numbers).</p>
+<p>An integer M and a non-empty zero-indexed array A consisting of N non-negative integers are given. All integers in array A are less than or equal to M.</p>
+<p>A pair of integers (P, Q), such that 0 &#8804; P &#8804; Q &lt; N, is called a&nbsp;<i>slice</i>&nbsp;of array A. The slice consists of the elements A[P], A[P + 1], ..., A[Q]. A&nbsp;<i>distinct slice</i>&nbsp;is a slice consisting of only unique numbers. That is, no individual number occurs more than once in the slice.</p>
+<p>For example, consider integer M = 6 and array A such that:</p>
+<p>A[0] = 3 A[1] = 4 A[2] = 5 A[3] = 5 A[4] = 2</p>
+<p>There are exactly nine distinct slices: (0, 0), (0, 1), (0, 2), (1, 1), (1, 2), (2, 2), (3, 3), (3, 4) and (4, 4).</p>
+<p>The goal is to calculate the number of distinct slices.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int M, int[] A); }</p>
+<p>that, given an integer M and a non-empty zero-indexed array A consisting of N integers, returns the number of distinct slices.</p>
+<p>If the number of distinct slices is greater than 1,000,000,000, the function should return 1,000,000,000.</p>
+<p>For example, given integer M = 6 and array A such that:</p>
+<p>A[0] = 3 A[1] = 4 A[2] = 5 A[3] = 5 A[4] = 2</p>
+<p>the function should return 9, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; M is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [0..M].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(M), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/15-caterpillar_method/count_triangles/">CountTriangles</a></h3>
+<p>Count the number of triangles that can be built from a given set of edges.</p>
+<p>A zero-indexed array A consisting of N integers is given. A triplet (P, Q, R) is&nbsp;<i>triangular</i>&nbsp;if it is possible to build a triangle with sides of lengths A[P], A[Q] and A[R]. In other words, triplet (P, Q, R) is triangular if 0 &#8804; P &lt; Q &lt; R &lt; N and:</p>
+<p> &nbsp; &diams; &nbsp; A[P] + A[Q] &gt; A[R],</p>
+<p> &nbsp; &diams; &nbsp; A[Q] + A[R] &gt; A[P],</p>
+<p> &nbsp; &diams; &nbsp; A[R] + A[P] &gt; A[Q].</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = 10 A[1] = 2 A[2] = 5 A[3] = 1 A[4] = 8 A[5] = 12</p>
+<p>There are four triangular triplets that can be constructed from elements of this array, namely (0, 2, 4), (0, 2, 5), (0, 4, 5), and (2, 4, 5).</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A consisting of N integers, returns the number of triangular triplets in this array.</p>
+<p>For example, given array A such that:</p>
+<p>A[0] = 10 A[1] = 2 A[2] = 5 A[3] = 1 A[4] = 8 A[5] = 12</p>
+<p>the function should return 4, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..1,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N<sup>2</sup>);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/15-caterpillar_method/min_abs_sum_of_two/">MinAbsSumOfTwo</a></h3>
+<p>Find the minimal absolute value of a sum of two elements.</p>
+<p>Let A be a non-empty zero-indexed array consisting of N integers.</p>
+<p>The&nbsp;<i>abs sum of two</i>&nbsp;for a pair of indices (P, Q) is the absolute value |A[P] + A[Q]|, for 0 &#8804; P &#8804; Q &lt; N.</p>
+<p>For example, the following array A:</p>
+<p>A[0] = 1 A[1] = 4 A[2] = -3</p>
+<p>has pairs of indices (0, 0), (0, 1), (0, 2), (1, 1), (1, 2), (2, 2).&nbsp;
+<br> The abs sum of two for the pair (0, 0) is A[0] + A[0] = |1 + 1| = 2.&nbsp;
+<br> The abs sum of two for the pair (0, 1) is A[0] + A[1] = |1 + 4| = 5.&nbsp;
+<br> The abs sum of two for the pair (0, 2) is A[0] + A[2] = |1 + (&#8722;3)| = 2.&nbsp;
+<br> The abs sum of two for the pair (1, 1) is A[1] + A[1] = |4 + 4| = 8.&nbsp;
+<br> The abs sum of two for the pair (1, 2) is A[1] + A[2] = |4 + (&#8722;3)| = 1.&nbsp;
+<br> The abs sum of two for the pair (2, 2) is A[2] + A[2] = |(&#8722;3) + (&#8722;3)| = 6.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers, returns the minimal abs sum of two for any pair of indices in this array.</p>
+<p>For example, given the following array A:</p>
+<p>A[0] = 1 A[1] = 4 A[2] = -3</p>
+<p>the function should return 1, as explained above.</p>
+<p>Given array A:</p>
+<p>A[0] = -8 A[1] = 4 A[2] = 5 A[3] =-10 A[4] = 3</p>
+<p>the function should return |(&#8722;8) + 5| = 3.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;1,000,000,000..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 16</h1>
+<h2>Greedy algorithms</h2>
+<p>PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/16-greedy_algorithms/max_nonoverlapping_segments/">MaxNonoverlappingSegments</a></h3>
+<p>Find a maximal set of non-overlapping segments.</p>
+<p>Located on a line are N segments, numbered from 0 to N &#8722; 1, whose positions are given in zero-indexed arrays A and B. For each I (0 &#8804; I &lt; N) the position of segment I is from A[I] to B[I] (inclusive). The segments are sorted by their ends, which means that B[K] &#8804; B[K + 1] for K such that 0 &#8804; K &lt; N &#8722; 1.</p>
+<p>Two segments I and J, such that I &#8800; J, are&nbsp;<i>overlapping</i>&nbsp;if they share at least one common point. In other words, A[I] &#8804; A[J] &#8804; B[I] or A[J] &#8804; A[I] &#8804; B[J].</p>
+<p>We say that the set of segments is&nbsp;<i>non-overlapping</i>&nbsp;if it contains no two overlapping segments. The goal is to find the size of a non-overlapping set containing the maximal number of segments.</p>
+<p>For example, consider arrays A, B such that:</p>
+<p>A[0] = 1 B[0] = 5 A[1] = 3 B[1] = 6 A[2] = 7 B[2] = 8 A[3] = 9 B[3] = 9 A[4] = 9 B[4] = 10</p>
+<p>The segments are shown in the figure below.</p>
+<p><img width=262 height=36 src="Lessons_files/image004.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/max_nonoverlapping_segments/static/images/auto/68b279360bc48af61d9d3bdfbe1d30fe.png"></p>
+<p>The size of a non-overlapping set containing a maximal number of segments is 3. For example, possible sets are {0, 2, 3}, {0, 2, 4}, {1, 2, 3} or {1, 2, 4}. There is no non-overlapping set with four segments.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A, int[] B); }</p>
+<p>that, given two zero-indexed arrays A and B consisting of N integers, returns the size of a non-overlapping set containing a maximal number of segments.</p>
+<p>For example, given arrays A, B shown above, the function should return 3, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..30,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays A, B is an integer within the range [0..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; A[I] &#8804; B[I], for each I (0 &#8804; I &lt; N);</p>
+<p> &nbsp; &diams; &nbsp; B[K] &#8804; B[K + 1], for each K (0 &#8804; K &lt; N &#8722; 1).</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/16-greedy_algorithms/tie_ropes/">TieRopes</a></h3>
+<p>Tie adjacent ropes to achieve the maximum number of ropes of length &gt;= K.</p>
+<p>There are N ropes numbered from 0 to N &#8722; 1, whose lengths are given in a zero-indexed array A, lying on the floor in a line. For each I (0 &#8804; I &lt; N), the length of rope I on the line is A[I].</p>
+<p>We say that two ropes I and I + 1 are&nbsp;<i>adjacent</i>. Two adjacent ropes can be tied together with a knot, and the length of the tied rope is the sum of lengths of both ropes. The resulting new rope can then be tied again.</p>
+<p>For a given integer K, the goal is to tie the ropes in such a way that the number of ropes whose length is greater than or equal to K is maximal.</p>
+<p>For example, consider K = 4 and array A such that:</p>
+<p>A[0] = 1 A[1] = 2 A[2] = 3 A[3] = 4 A[4] = 1 A[5] = 1 A[6] = 3</p>
+<p>The ropes are shown in the figure below.</p>
+<p><img width=602 height=14 src="Lessons_files/image005.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/tie_ropes/static/images/auto/f13a51b17fba1ea9b8ea7fd37006f767.png"></p>
+<p>We can tie:</p>
+<p> &nbsp; &diams; &nbsp; rope 1 with rope 2 to produce a rope of length A[1] + A[2] = 5;</p>
+<p> &nbsp; &diams; &nbsp; rope 4 with rope 5 with rope 6 to produce a rope of length A[4] + A[5] + A[6] = 5.</p>
+<p>After that, there will be three ropes whose lengths are greater than or equal to K = 4. It is not possible to produce four such ropes.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int K, int[] A); }</p>
+<p>that, given an integer K and a non-empty zero-indexed array A of N integers, returns the maximum number of ropes of length greater than or equal to K that can be created.</p>
+<p>For example, given K = 4 and array A such that:</p>
+<p>A[0] = 1 A[1] = 2 A[2] = 3 A[3] = 4 A[4] = 1 A[5] = 1 A[6] = 3</p>
+<p>the function should return 3, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; K is an integer within the range [1..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 17</h1>
+<h2>Dynamic programming</h2>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/17-dynamic_programming/number_solitaire/">NumberSolitaire</a></h3>
+<p>In a given array, find the subset of maximal sum in which the distance between consecutive elements is at most 6.</p>
+<p>A game for one player is played on a board consisting of N consecutive squares, numbered from 0 to N &#8722; 1. There is a number written on each square. A non-empty zero-indexed array A of N integers contains the numbers written on the squares. Moreover, some squares can be marked during the game.</p>
+<p>At the beginning of the game, there is a pebble on square number 0 and this is the only square on the board which is marked. The goal of the game is to move the pebble to square number N &#8722; 1.</p>
+<p>During each turn we throw a six-sided die, with numbers from 1 to 6 on its faces, and consider the number K, which shows on the upper face after the die comes to rest. Then we move the pebble standing on square number I to square number I + K, providing that square number I + K exists. If square number I + K does not exist, we throw the die again until we obtain a valid move. Finally, we mark square number I + K.</p>
+<p>After the game finishes (when the pebble is standing on square number N &#8722; 1), we calculate the result. The result of the game is the sum of the numbers written on all marked squares.</p>
+<p>For example, given the following array:</p>
+<p>A[0] = 1 A[1] = -2 A[2] = 0 A[3] = 9 A[4] = -1 A[5] = -2</p>
+<p>one possible game could be as follows:</p>
+<p> &nbsp; &diams; &nbsp; the pebble is on square number 0, which is marked;</p>
+<p> &nbsp; &diams; &nbsp; we throw 3; the pebble moves from square number 0 to square number 3; we mark square number 3;</p>
+<p> &nbsp; &diams; &nbsp; we throw 5; the pebble does not move, since there is no square number 8 on the board;</p>
+<p> &nbsp; &diams; &nbsp; we throw 2; the pebble moves to square number 5; we mark this square and the game ends.</p>
+<p>The marked squares are 0, 3 and 5, so the result of the game is 1 + 9 + (&#8722;2) = 8. This is the maximal possible result that can be achieved on this board.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A of N integers, returns the maximal result that can be achieved on the board represented by array A.</p>
+<p>For example, given the array</p>
+<p>A[0] = 1 A[1] = -2 A[2] = 0 A[3] = 9 A[4] = -1 A[5] = -2</p>
+<p>the function should return 8, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [2..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;10,000..10,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>AMBITIOUS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/17-dynamic_programming/min_abs_sum/">MinAbsSum</a></h3>
+<p>Given array of integers, find the lowest absolute sum of elements.</p>
+<p>For a given array A of N integers and a sequence S of N integers from the set {&#8722;1, 1}, we define val(A, S) as follows:</p>
+<p>val(A, S) = |sum{ A[i]*S[i] for i = 0..N&#8722;1 }|</p>
+<p>(Assume that the sum of zero elements equals zero.)</p>
+<p>For a given array A, we are looking for such a sequence S that minimizes val(A,S).</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given an array A of N integers, computes the minimum value of val(A,S) from all possible values of val(A,S) for all possible sequences S of N integers from the set {&#8722;1, 1}.</p>
+<p>For example, given array:</p>
+<p>A[0] = 1 A[1] = 5 A[2] = 2 A[3] = -2</p>
+<p>your function should return 0, since for S = [&#8722;1, 1, &#8722;1, 1], val(A, S) = 0, which is the minimum possible value.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..20,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;100..100].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*max(abs(A))<sup>2</sup>);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N+sum(abs(A))), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 90</h1>
+<h2>Tasks from Indeed Prime 2015 challenge</h2>
+<p>PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/90-tasks_from_indeed_prime_2015_challenge/longest_password/">LongestPassword</a></h3>
+<p>Given a string containing words, find the longest word that satisfies specific conditions.</p>
+<p>You would like to set a password for a bank account. However, there are three restrictions on the format of the password:</p>
+<p> &nbsp; &diams; &nbsp; it has to contain only alphanumerical characters (a&#8722;z,&nbsp;A&#8722;Z,&nbsp;0&#8722;9);</p>
+<p> &nbsp; &diams; &nbsp; there should be an even number of letters;</p>
+<p> &nbsp; &diams; &nbsp; there should be an odd number of digits.</p>
+<p>You are given a string S consisting of N characters. String S can be divided into&nbsp;<i>words</i>&nbsp;by splitting it at, and removing, the spaces. The goal is to choose the longest word that is a valid password. You can assume that if there are K spaces in string S then there are exactly K + 1 words.</p>
+<p>For example, given &quot;test 5 a0A pass007 ?xy1&quot;, there are five words and three of them are valid passwords: &quot;5&quot;, &quot;a0A&quot; and &quot;pass007&quot;. Thus the longest password is &quot;pass007&quot; and its length is 7. Note that neither &quot;test&quot; nor &quot;?xy1&quot; is a valid password, because &quot;?&quot; is not an alphanumerical character and &quot;test&quot; contains an even number of digits (zero).</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(string S); }</p>
+<p>that, given a non-empty string S consisting of N characters, returns the length of the longest word from the string that is a valid password. If there is no such word, your function should return &#8722;1.</p>
+<p>For example, given S = &quot;test 5 a0A pass007 ?xy1&quot;, your function should return 7, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..200];</p>
+<p> &nbsp; &diams; &nbsp; string S consists only of printable ASCII characters and spaces.</p>
+<p>In your solution, focus on&nbsp;correctness. The performance of your solution will not be the focus of the assessment.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/90-tasks_from_indeed_prime_2015_challenge/flood_depth/">FloodDepth</a></h3>
+<p>Find the maximum depth of water in mountains after a huge rainfall.</p>
+<p>You are helping a geologist friend investigate an area with mountain lakes. A recent heavy rainfall has flooded these lakes and their water levels have reached the highest possible point. Your friend is interested to know the maximum depth in the deepest part of these lakes.</p>
+<p>We simplify the problem in 2-D dimensions. The whole landscape can be divided into small blocks and described by an array A of length N. Each element of A is the altitude of the rock floor of a block (i.e. the height of this block when there is no water at all). After the rainfall, all the low-lying areas (i.e. blocks that have higher blocks on both sides) are holding as much water as possible. You would like to know the maximum depth of water after this entire area is flooded. You can assume that the altitude outside this area is zero and the outside area can accommodate infinite amount of water.</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = 1 A[1] = 3 A[2] = 2 A[3] = 1 A[4] = 2 A[5] = 1 A[6] = 5 A[7] = 3 A[8] = 3 A[9] = 4 A[10] = 2</p>
+<p>The following picture illustrates the landscape after it has flooded:</p>
+<p><img width=284 height=139 src="Lessons_files/image006.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/flood_depth/static/images/auto/567c5fa410e5eec80b633b00c33eb77d.png"></p>
+<p>The gray area is the rock floor described by the array A above and the blue area with dashed lines represents the water filling the low-lying areas with maximum possible volume. Thus, blocks 3 and 5 have a water depth of 2 while blocks 2, 4, 7 and 8 have a water depth of 1. Therefore, the maximum water depth of this area is 2.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N integers, returns the maximum depth of water.</p>
+<p>Given array A shown above, the function should return 2, as explained above.</p>
+<p>For the following array:</p>
+<p>A[0] = 5 A[1] = 8</p>
+<p>the function should return 0, because this landscape cannot hold any water.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..100,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>AMBITIOUS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/90-tasks_from_indeed_prime_2015_challenge/slalom_skiing/">SlalomSkiing</a></h3>
+<p>Given a sequence, find the longest subsequence that can be decomposed into at most three monotonic parts.</p>
+<p>You are a skier participating in a giant slalom. The slalom track is located on a ski slope, goes downhill and is fenced by barriers on both sides. The barriers are perpendicular to the starting line located at the top of the slope. There are N slalom gates on the track. Each gate is placed at a distinct distance from the starting line and from the barrier on the right-hand side (looking downhill).</p>
+<p>You start from any place on the starting line, ski down the track passing as many gates as possible, and finish the slalom at the bottom of the slope.&nbsp;<i>Passing</i>&nbsp;a gate means skiing through the position of the gate.</p>
+<p>You can ski downhill in either of two directions: to the left or to the right. When you ski to the left, you pass gates of increasing distances from the right barrier, and when you ski to the right, you pass gates of decreasing distances from the right barrier. You want to ski to the left at the beginning.</p>
+<p>Unfortunately, changing direction (left to right or vice versa) is exhausting, so you have decided to change direction&nbsp;<i>at most two</i>&nbsp;times during your ride. Because of this, you have allowed yourself to miss some of the gates on the way down the slope. You would like to know the maximum number of gates that you can pass with at most two changes of direction.</p>
+<p>The arrangement of the gates is given as an array A consisting of N integers, whose elements specify the positions of the gates: gate K (for 0 &#8804; K &lt; N) is at a distance of K+1 from the starting line, and at a distance of A[K] from the right barrier.</p>
+<p>For example, consider array A such that:</p>
+<p>A[0] = 15 A[1] = 13 A[2] = 5 A[3] = 7 A[4] = 4 A[5] = 10 A[6] = 12 A[7] = 8 A[8] = 2 A[9] = 11 A[10] = 6 A[11] = 9 A[12] = 3</p>
+<p><img width=402 height=375 src="Lessons_files/image007.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/slalom_skiing/static/images/auto/a409a6f498a591b188735b3cce0fde4f.png"></p>
+<p>The picture above illustrates the example track with N = 13 gates and a course that passes eight gates. After starting, you ski to the left (from your own perspective). You pass gates 2, 3, 5, 6 and then change direction to the right. After that you pass gates 7, 8 and then change direction to the left. Finally, you pass gates 10, 11 and finish the slalom. There is no possible way of passing more gates using at most two changes of direction.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that, given a zero-indexed array A consisting of N integers, describing the positions of the gates on the track, returns the maximum number of gates that you can pass during one ski run.</p>
+<p>For example, given the above data, the function should return 8, as explained above.</p>
+<p>For the following array A consisting of N = 2 elements:</p>
+<p>A[0] = 1 A[1] = 5</p>
+<p>the function should return 2.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; the elements of A are all distinct.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 91</h1>
+<h2>Tasks from Indeed Prime 2016 challenge</h2>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/91-tasks_from_indeed_prime_2016_challenge/rectangle_builder_greater_area/">RectangleBuilderGreaterArea</a></h3>
+<p>Count the distinct rectangle sizes, of area greater than or equal to X, that can be built out of a given set of segments.</p>
+<p>Halfling Woolly Proudhoof is an eminent sheep herder. He wants to build a pen (enclosure) for his new flock of sheep. The pen will be rectangular and built from exactly four pieces of fence (so, the pieces of fence forming the opposite sides of the pen must be of equal length). Woolly can choose these pieces out of N pieces of fence that are stored in his barn. To hold the entire flock, the area of the pen must be greater than or equal to a given threshold X.</p>
+<p>Woolly is interested in the number of different ways in which he can build a pen. Pens are considered different if the sets of lengths of their sides are different. For example, a pen of size 14 is different from a pen of size 22 (although both have an area of 4), but pens of sizes 12 and 21 are considered the same.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A, int X); }</p>
+<p>that, given a zero-indexed array A of N integers (containing the lengths of the available pieces of fence) and an integer X, returns the number of different ways of building a rectangular pen satisfying the above conditions. The function should return &#8722;1 if the result exceeds 1,000,000,000.</p>
+<p>For example, given X = 5 and the following array A:</p>
+<p>A[0] = 1 A[1] = 2 A[2] = 5 A[3] = 1 A[4] = 1 A[5] = 2 A[6] = 3 A[7] = 5 A[8] = 1</p>
+<p><img width=450 height=156 src="Lessons_files/image008.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/rectangle_builder_greater_area/static/images/auto/cfd8d68df84af5bf92c26aac46622782.png"></p>
+<p>the function should return 2. The figure above shows available pieces of fence (on the left) and possible to build pens (on the right). The pens are of sizes 1x5 and 2x5. Pens of sizes 11 and 12 can be built, but are too small in area. It is not possible to build pens of sizes 23 or 35, as there is only one piece of fence of length 3.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; X is an integer within the range [1..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [1..1,000,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/91-tasks_from_indeed_prime_2016_challenge/dwarfs_rafting/">DwarfsRafting</a></h3>
+<p>Find out how many dwarfs can fit on a raft such that it's balanced when crossing a river.</p>
+<p>A company of dwarfs is travelling across the New Zealand. On reaching the Clutha River the dwarfs need to get across, but recent storms have washed away the bridge. Luckily, a small ferry, in the form of a square raft, is operating.</p>
+<p>The raft is square and has N rows of seats, numbered from 1 to N. Each row contains N seats, labeled with consecutive letters (A,&nbsp;B,&nbsp;C, etc.). Each seat is identified by a string composed of its row number followed by its column number; for example, &quot;9C&quot; denotes the third seat in the 9th row.</p>
+<p>The raft has already been loaded with barrels in some seat positions, and other seats are already occupied by dwarfs. Our company of dwarfs may only take the remaining unoccupied seats. The ferryman wants to accommodate as many dwarfs as possible, but the raft needs to be stable when making the crossing. That is, the following conditions must be satisfied:</p>
+<p> &nbsp; &diams; &nbsp; the front and back halves of the raft (in terms of the rows of seats) must each contain the same number of dwarfs;</p>
+<p> &nbsp; &diams; &nbsp; similarly, the left and right sides of the raft (in terms of the columns of seats) must each contain the same number of dwarfs.</p>
+<p>You do not have to worry about balancing the barrels; you can assume that their weights are negligible.</p>
+<p>For example, a raft of size N = 4 is shown in the following illustration:</p>
+<p><img width=208 height=179 src="Lessons_files/image009.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/dwarfs_rafting/static/images/auto/566482207f88b47c87c6163876cc1b2f.png"></p>
+<p>Barrels are marked as brown squares, and seats that are already occupied by dwarfs are labeled&nbsp;d.</p>
+<p>The positions of the barrels are given in string S. The occupied seat numbers are given in string T. The contents of the strings are separated by single spaces and may appear in any order. For example, in the diagram above, S = &quot;1B 1C 4B 1D 2A&quot; and T = &quot;3B 2D&quot;.</p>
+<p>In this example, the ferryman can accommodate at most six more dwarfs, as indicated by the green squares in the following diagram:</p>
+<p><img width=208 height=179 src="Lessons_files/image010.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/dwarfs_rafting/static/images/auto/31eaf5c0da7d6267c0f4175a8b23b6aa.png"></p>
+<p>The raft is then balanced: both left and right halves have the same number of dwarfs (four), and both front and back halves have the same number of dwarfs (also four).</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int N, string S, string T); }</p>
+<p>that, given the size of the raft N and two strings S, T that describes the positions of barrels and occupied seats, respectively, returns the maximum number of dwarfs that can fit on the raft. If it is not possible to balance the raft with dwarfs, your function should return&nbsp;-1.</p>
+<p>For instance, given N = 4, S = &quot;1B 1C 4B 1D 2A&quot; and T = &quot;3B 2D&quot;, your function should return 6, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an even integer within the range [2..26];</p>
+<p> &nbsp; &diams; &nbsp; strings S, T consist of valid seat numbers, separated with spaces;</p>
+<p> &nbsp; &diams; &nbsp; each seat number can appear no more than once in the strings;</p>
+<p> &nbsp; &diams; &nbsp; no seat number can appear in both S and T simultaneously.</p>
+<p>In your solution, focus on&nbsp;correctness. The performance of your solution will not be the focus of the assessment.</p>
+<p>AMBITIOUS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/91-tasks_from_indeed_prime_2016_challenge/tree_product/">TreeProduct</a></h3>
+<p>Remove at most two edges from a tree graph to maximize the product of the components' sizes.</p>
+<p>Elves in the forest of Glandishar are preparing for an Orc invasion. They have a network of N + 1 guard posts located on the open platforms in the treetops. The posts are numbered from 0 to N and are connected by N bridges, so that one can get from any one guard post to any other guard post in a unique way. In other words, guard posts and bridges form a tree graph.</p>
+<p>The Elves are afraid that if the Orcs manage to get hold of one of the guard posts, then they will have easy access to all the other guard posts. Therefore, the Elves have decided to destroy at most two bridges and split the guard posts into at most three separate areas, so that the guards can move within each area but it's not possible to move between the areas.</p>
+<p>In each area there will be one guard who will move from guard post to guard post during the night. If the Orcs attack, the guards will raise an alarm. However, if the Orcs manage to guess the guard post in which the guards are currently located, they may manage to take out the guards without raising the alarm. The Elves want to avoid the situation that all guard posts fail this way, by maximizing:</p>
+<p> &nbsp; &diams; &nbsp; X * Y * Z, if the guard posts have been divided into three areas consisting of X, Y and Z guard posts, respectively;</p>
+<p> &nbsp; &diams; &nbsp; X * Y, if the guard posts have been divided into two areas consisting of X and Y posts, respectively;</p>
+<p> &nbsp; &diams; &nbsp; N + 1, if the guard posts haven't been divided;</p>
+<p>depending on which option gives the largest result.</p>
+<p>You are given a map of the network in the form of two arrays A, B of length N. For each K (0 &#8804; K &lt; N) there is a bridge between posts A[K] and B[K].</p>
+<p>Write a function:</p>
+<p>class Solution { public string solution(int[] A, int[] B); }</p>
+<p>that, given two zero-indexed arrays A and B of N integers, returns the largest possible result. Since the result can be large, you should return it as a string.</p>
+<p>For example, given the following arrays:</p>
+<p>A[0] = 0 B[0] = 1 A[1] = 1 B[1] = 2 A[2] = 1 B[2] = 3 A[3] = 3 B[3] = 4 A[4] = 3 B[4] = 5 A[5] = 6 B[5] = 3 A[6] = 7 B[6] = 5</p>
+<p><img width=137 height=137 src="Lessons_files/image011.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/tree_product/static/images/auto/c8f8e5d369ea10a6117405ff433fea98.png"></p>
+<p>the function should return &quot;18&quot; since the Elves can destroy bridges 1&#8722;3 and 3&#8722;5 (marked as dashed lines in the image above). The created areas consist of 3, 3 and 2 guard posts.</p>
+<p>Therefore, the result is 3 * 3 * 2 = 18. It is not possible to obtain a better result.</p>
+<p>Given the following arrays:</p>
+<p>A[0] = 0 B[0] = 1 A[1] = 1 B[1] = 2</p>
+<p>the function should return &quot;3&quot; (it is optimal not to destroy any bridge).</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..50,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays A, B is an integer within the range [0..N];</p>
+<p> &nbsp; &diams; &nbsp; distance from guard post 0 to any other post is not greater than 900 bridges.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>AMBITIOUS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/91-tasks_from_indeed_prime_2016_challenge/hilbert_maze/">HilbertMaze</a></h3>
+<p>Find the shortest path between two fields in a Hilbert maze.</p>
+<p>A halfling is searching for treasure hidden in a maze in the dwarfs' mine. He has a map of the maze and would like to find the shortest path to the treasure.</p>
+<p>The maze has a specific shape. It is placed on a square grid with M<sup>2</sup>&nbsp;cells, where M = 2<sup>N+1</sup>+1 for some given size N. Each cell has coordinates (x, y), where 0 &#8804; x, y &lt; M, and can either be empty or contain a rock.</p>
+<p>The mazes of sizes N = 1 and N = 2 are presented in the pictures below:</p>
+<p><img width=410 height=204 src="Lessons_files/image012.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/hilbert_maze/static/images/auto/e5540ee69f2da8c4972a22eb7ad7dbb9.png"></p>
+<p>A maze of size N is constructed recursively from the layout of the maze of size N&#8722;1 (like the Hilbert curve). It contains four mazes of size N&#8722;1, each maze in one quarter. The maze in the bottom-left quarter is rotated by 90 degrees clockwise and the maze in the bottom-right quarter is rotated by 90 degrees counter-clockwise. The mazes in the top quarters are not rotated. There are three additional rocks (squares marked in green in the picture below) in the areas where the mazes intersect. The construction of the maze of size N = 3 is shown below:</p>
+<p><img width=375 height=371 src="Lessons_files/image013.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/hilbert_maze/static/images/auto/5e628d89f6101ad0dc48ce7ff5311068.png"></p>
+<p>The halfling would like to reach the treasure in the smallest number of steps possible. At each step, he can move to any one of the four adjacent cells (north, south, west, east) that does not contain a rock and is not outside of the grid.</p>
+<p>For example, given N = 1, the halfling needs 8 steps to move from cell (2, 1) to cell (3, 4):</p>
+<p><img width=121 height=123 src="Lessons_files/image014.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/hilbert_maze/static/images/auto/32be651c7db4cbb64e08cbb01b4f76ea.png"></p>
+<p>Write a function:</p>
+<p><code>class Solution { public int solution(int N, int A, int B, int C, int D); }</code></p>
+<p>that, given the size of the maze N, coordinates of the halfling (A, B) and coordinates of the treasure (C, D), returns the minimum number of steps required for the halfling to reach the treasure.</p>
+<p>Examples</p>
+<p>Given N = 1, A = 2, B = 1, C = 3 and D = 4 the function should return 8, as shown above.</p>
+<p>Given N = 2, A = 2, B = 5, C = 6 and D = 6 the function should return 7:</p>
+<p><img width=204 height=204 src="Lessons_files/image015.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/hilbert_maze/static/images/auto/f934f2e099d576dd5b1713519b981ac4.png"></p>
+<p>Given N = 3, A = 6, B = 6, C = 10 and D = 13 the function should return 39:</p>
+<p><img width=375 height=371 src="Lessons_files/image016.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/hilbert_maze/static/images/auto/7265934e4dbefaf7dfdeeb5e548231e5.png"></p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..25];</p>
+<p> &nbsp; &diams; &nbsp; A, B, C, D are integers within the range [0..2<sup>N+1</sup>];</p>
+<p> &nbsp; &diams; &nbsp; cells (A, B) and (C, D) do not contain rocks;</p>
+<p> &nbsp; &diams; &nbsp; the result will be an integer smaller than 2,147,483,647.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N).</p>
+<hr>
+
+<h1>Lesson 92</h1>
+<h2>Tasks from Indeed Prime 2016 College Coders challenge</h2>
+<p>EFFORTLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/92-tasks_from_indeed_prime_2016_college_coders_challenge/tennis_tournament/">TennisTournament</a></h3>
+<p>Given the numbers of players and available courts, calculate the maximum number of parallel tennis games.</p>
+<p>You are hosting a tennis tournament. P players, who will take part in the first round of this tournament, are already registered and you have reserved C tennis courts for the matches. Exactly two players play in each game and only one game can be played on each court at any given time. You want to host the maximum possible number of games starting at the same time (in order to finish the first round quickly).</p>
+<p>How many games can be hosted in parallel simultaneously?</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int P, int C); }</p>
+<p>that, given the number of players P and the number of reserved courts C, returns the maximum number of games that can be played in parallel.</p>
+<p>For example, given P = 5 players and C = 3 available courts, the function should return 2, as two games can be played simultaneously (for instance, the first and second players can play on the first court, and the third and fourth players on the second court, and the third court will be empty because the fifth player doesn't have a partner to play with).</p>
+<p>Given P = 10 players and C = 3 courts, the function should return 3, as at most three games can be hosted in parallel.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; P and C are integers within the range [1..30,000].</p>
+<p>In your solution, focus on&nbsp;correctness. The performance of your solution will not be the focus of the assessment.</p>
+<p>RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/92-tasks_from_indeed_prime_2016_college_coders_challenge/socks_laundering/">SocksLaundering</a></h3>
+<p>From drawers containing both clean and dirty socks, choose socks to launder in order to obtain the maximum number of clean pairs of socks.</p>
+<p>Bob is about to go on a trip. But first he needs to take care of his supply of socks. Each sock has its own color. Bob wants to take as many pairs of clean socks as possible (both socks in the pair should be of the same color).</p>
+<p>Socks are divided into two drawers: clean and dirty socks. Bob has time for only one laundry and his washing machine can clean at most K socks. He wants to pick socks for laundering in such a way that after washing he will have a maximal number of clean, same-colored pairs of socks. It is possible that some socks cannot be paired with any other sock, because Bob may have lost some socks over the years.</p>
+<p>Bob has exactly N clean and M dirty socks, which are described in arrays C and D, respectively. The colors of the socks are represented as integers (equal numbers representing identical colors).</p>
+<p>For example, given four clean socks and five dirty socks:</p>
+<p><img width=213 height=72 src="Lessons_files/image017.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/socks_laundering/static/images/auto/bb5550b86d03b06e22142e936bddd02c.png"></p>
+<p>If Bob's washing machine can clean at most K = 2 socks, then he can take a maximum of three pairs of clean socks. He can wash one red sock and one green sock, numbered 1 and 2 respectively. Then he will have two pairs of red socks and one pair of green socks.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int K, int[] C, int[] D); }</p>
+<p>that, given an integer K (the number of socks that the washing machine can clean), two arrays C and D (containing the color representations of N clean and M dirty socks respectively), returns the maximum number of pairs of socks that Bob can take on the trip.</p>
+<p>For example, given K = 2, C = [1, 2, 1, 1] and D = [1, 4, 3, 2, 4], the function should return 3, as explained above.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; K is an integer within the range [0..50];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays C, D is an integer within the range [1..50];</p>
+<p> &nbsp; &diams; &nbsp; C and D are not empty and each of them contains at most 50 elements.</p>
+<p>In your solution, focus on&nbsp;correctness. The performance of your solution will not be the focus of the assessment.</p>
+<p>AMBITIOUS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/92-tasks_from_indeed_prime_2016_college_coders_challenge/array_recovery/">ArrayRecovery</a></h3>
+<p>Recover a broken array using partial information in another array.</p>
+<p>Bob once had an array A with N elements. Each element was a positive integer not exceeding M.</p>
+<p>Bob wrote a program to find an array B, defined as follows. For every index J, let's find the biggest index K such that K &lt; J and A[K] &lt; A[J]. Then set B[J] = A[K]. If there is no such index K, then set B[J] = 0. Intuitively, the J-th element of B contains the last value smaller than A[J] that appears before it, or 0 if there is no such element.</p>
+<p>For example, let A = [2, 5, 3, 7, 9, 6]. Then B = [0, 2, 2, 3, 7, 3]. For instance, B[5] = 3, as A[5] is 6 and the last value before A[5] smaller than 6 is 3.</p>
+<p>Bob computed an array B and then mistakenly deleted A. He now intends to find every valid array A from which his program would produce B. Count the number of such arrays A. Since the answer could be very big, return it modulo 10<sup>9</sup>+7.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] B, int M); }</p>
+<p>that, given an integer M and a zero-indexed array B with N integers, returns the remainder from the division by 10<sup>9</sup>+7 of the number of valid arrays A from which Bob would get B. You can assume that there is at least one such array.</p>
+<p>For example, given: M = 4, B = [0, 2, 2] the function should return 3. The possible removed arrays A were [2, 3, 3], [2, 4, 3] and [2, 4, 4].</p>
+<p>For the following data: M = 10, B = [0, 3, 5, 6] the function should return 4, as the possible arrays A were [3, 5, 6, 7], [3, 5, 6, 8], [3, 5, 6, 9] and [3, 5, 6, 10].</p>
+<p>For the following data: M = 10<sup>5</sup>, B = [0, 0] there are 5000050000 possible arrays (the first element in array A can be anything in the range 1..10<sup>5</sup>&nbsp;and the second element can be either equal or smaller), so the function should return 49965 (as we are taking modulo 10<sup>9</sup>+7).</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..100,000];</p>
+<p> &nbsp; &diams; &nbsp; M is an integer within the range [1..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array B is an integer within the range [0..M];</p>
+<p> &nbsp; &diams; &nbsp; there exists at least one valid array A from which Bob would get array B.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>AMBITIOUS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/92-tasks_from_indeed_prime_2016_college_coders_challenge/diamonds_count/">DiamondsCount</a></h3>
+<p>Given points on a plane, count the number of sets of four points that form regular diamonds.</p>
+<p>A&nbsp;<i>diamond</i>&nbsp;is a quadrilateral whose four sides all have the same length and whose diagonals are parallel to the coordinate axes.</p>
+<p>You are given N distinct points on a plane. Count the number of different diamonds that can be constructed using these points as vertices (two diamonds are different if their sets of vertices are different). Do not count diamonds whose area is empty.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] X, int[] Y); }</p>
+<p>that, given two zero-indexed arrays X and Y, each containing N integers, representing N points (where X[K], Y[K] are the coordinates of the K-th point), returns the number of diamonds on the plane.</p>
+<p>For example, for N = 7 points whose coordinates are specified in arrays X = [1, 1, 2, 2, 2, 3, 3] and Y = [3, 4, 1, 3, 5, 3, 4], the function should return 2, since we can find two diamonds as shown in the picture below:</p>
+<p><img width=296 height=419 src="Lessons_files/image018.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/diamonds_count/static/images/auto/040682d7f39eb100a334fd147608bc50.png"></p>
+<p>Given arrays: X = [1, 2, 3, 3, 2, 1], Y = [1, 1, 1, 2, 2, 2], the function should return 0, since there are no diamonds on the plane:</p>
+<p><img width=294 height=242 src="Lessons_files/image019.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/diamonds_count/static/images/auto/829693194a70bdb80951fb5cd31ea9b1.png"></p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [4..1,500];</p>
+<p> &nbsp; &diams; &nbsp; each element of arrays X, Y is an integer within the range [0..N&#8722;1];</p>
+<p> &nbsp; &diams; &nbsp; given N points are pairwise distinct.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N<sup>2</sup>);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N<sup>2</sup>), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<hr>
+
+<h1>Lesson 99</h1>
+<h2>Future training</h2>
+<p>EFFORTLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/99-future_training/sql_sum/">SqlSum</a></h3>
+<p>Calculate sum of elements.</p>
+<p>Given a table&nbsp;elements&nbsp;with the following structure:</p>
+<p>create table elements ( v integer not null );</p>
+<p>write an SQL query that returns the sum of the numbers in column&nbsp;v.</p>
+<p>For example, given:</p>
+<p>v --- 2 10 20 10</p>
+<p>your query should return 42.</p>
+<p>PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/99-future_training/str_symmetry_point/">StrSymmetryPoint</a></h3>
+<p>Find a symmetry point of a string, if any.</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(string S); }</p>
+<p>that, given a string S, returns the index (counting from 0) of a character such that the part of the string to the left of that character is a reversal of the part of the string to its right. The function should return &#8722;1 if no such index exists.</p>
+
+<p>Note: reversing an empty string (i.e. a string whose length is zero) gives an empty string.</p>
+<p>For example, given a string:</p>
+<p>&quot;racecar&quot;</p>
+<p>the function should return 3, because the substring to the left of the character &quot;e&quot; at index 3 is &quot;rac&quot;, and the one to the right is &quot;car&quot;.</p>
+<p>Given a string:</p>
+<p>&quot;x&quot;</p>
+<p>the function should return 0, because both substrings are empty.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; the length of S is within the range [0..2,000,000].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(length(S));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(1) (not counting the storage required for input arguments).</p>
+<p> &nbsp; &diams; &nbsp; PAINLESS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/99-future_training/tree_height/">TreeHeight</a></h3>
+<p>Compute the height of a binary tree.</p>
+<p>In this problem we consider binary trees, represented by pointer data structures.</p>
+<p>A&nbsp;<i>binary tree</i>&nbsp;is either an empty tree or a node (called the&nbsp;<i>root</i>) consisting of a single integer value and two further binary trees, called the&nbsp;<i>left subtree</i>&nbsp;and the&nbsp;<i>right subtree</i>.</p>
+<p>For example, the figure below shows a binary tree consisting of six nodes. Its root contains the value 5, and the roots of its left and right subtrees have the values 3 and 10, respectively. The right subtree of the node containing the value 10, as well as the left and right subtrees of the nodes containing the values 20, 21 and 1, are empty trees.</p>
+<p><img width=152 height=188 src="Lessons_files/image020.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/tree_height/static/images/auto/f6ee45e3a63ec4fade2ed27c6bab8e54.png"></p>
+<p>A&nbsp;<i>path</i>&nbsp;in a binary tree is a non-empty sequence of nodes that one can traverse by following the pointers. The&nbsp;<i>length</i>&nbsp;of a path is the number of pointers it traverses. More formally, a path of length K is a sequence of nodes P[0], P[1], ..., P[K], such that node P[I + 1] is the root of the left or right subtree of P[I], for 0 &#8804; I &lt; K. For example, the sequence of nodes with values 5, 3, 21 is a path of length 2 in the tree from the above figure. The sequence of nodes with values 10, 1 is a path of length 1. The sequence of nodes with values 21, 3, 20 is not a valid path.</p>
+<p>The&nbsp;<i>height</i>&nbsp;of a binary tree is defined as the length of the longest possible path in the tree. In particular, a tree consisting of only one node has height 0 and, conventionally, an empty tree has height &#8722;1. For example, the tree shown in the above figure is of height 2.</p>
+<p>Problem</p>
+<p>Write a function:</p>
+<p><code>class Solution { public int solution(Tree T); }</code></p>
+<p>that, given a non-empty binary tree T consisting of N nodes, returns its height. For example, given tree T shown in the figure above, the function should return 2, as explained above. Note that the values contained in the nodes are not relevant in this task.</p>
+<p>Technical details</p>
+<p>A binary tree can be given using a pointer data structure. Assume that the following declarations are given:</p>
+<p><code>class Tree { public int x; public Tree l; public Tree r; };</code></p>
+<p>An empty tree is represented by an empty pointer (denoted by&nbsp;<code>null</code>). A non-empty tree is represented by a pointer to an object representing its root. The attribute&nbsp;<code>x</code>&nbsp;holds the integer contained in the root, whereas attributes&nbsp;<code>l</code>&nbsp;and&nbsp;<code>r</code>&nbsp;hold the left and right subtrees of the binary tree, respectively.</p>
+<p>For the purpose of entering your own test cases, you can denote a tree recursively in the following way. An empty binary tree is denoted by&nbsp;<code>None</code>. A non-empty tree is denoted as (X, L, R), where X is the value contained in the root and L and R denote the left and right subtrees, respectively. The tree from the above figure can be denoted as:</p>
+<p><code>(5, (3, (20, None, None), (21, None, None)), (10, (1, None, None), None))</code></p>
+<p>Assumptions</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [1..1,000];</p>
+<p> &nbsp; &diams; &nbsp; the height of tree T (number of edges on the longest path from root to leaf) is within the range [0..500].</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RESPECTABLE</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/99-future_training/array_inversion_count/">ArrayInversionCount</a></h3>
+<p>Compute number of inversion in an array.</p>
+<p>A zero-indexed array A consisting of N integers is given. An&nbsp;<i>inversion</i>&nbsp;is a pair of indexes (P, Q) such that P &lt; Q and A[Q] &lt; A[P].</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(int[] A); }</p>
+<p>that computes the number of inversions in A, or returns &#8722;1 if it exceeds 1,000,000,000.</p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [0..100,000];</p>
+<p> &nbsp; &diams; &nbsp; each element of array A is an integer within the range [&#8722;2,147,483,648..2,147,483,647].</p>
+<p>For example, in the following array:</p>
+<p>A[0] = -1 A[1] = 6 A[2] = 3 A[3] = 4 A[4] = 7 A[5] = 4</p>
+<p>there are four inversions:</p>
+<p>(1,2) (1,3) (1,5) (4,5)</p>
+<p>so the function should return 4.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N*log(N));</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+<p>AMBITIOUS</p>
+
+<h3><a href="https://app.codility.com/programmers/lessons/99-future_training/polygon_concavity_index/">PolygonConcavityIndex</a></h3>
+<p>Check whether a given polygon in a 2D plane is convex; if not, return the index of a vertex that doesn't belong to the convex hull.</p>
+<p>An array A of points in a 2D plane is given. These points represent a polygon: every two consecutive points describe an edge of the polygon, and there is an edge connecting the last point and the first point in the array.</p>
+<p>A set of points in a 2D plane, whose boundary is a straight line, is called a&nbsp;<i>semiplane</i>. More precisely, any set of the form {(x, y) : ax + by &#8805; c} is a semiplane. The semiplane contains its boundary.</p>
+<p>A polygon is&nbsp;<i>convex</i>&nbsp;if and only if, no line segment between two points on the boundary ever goes outside the polygon.</p>
+<p>For example, the polygon consisting of vertices whose Cartesian coordinates are consecutively:</p>
+<p>(-1, 3) (3, 1) (0, -1) (-2, 1)</p>
+<p>is convex.</p>
+<p><img width=460 height=398 src="Lessons_files/image021.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/polygon_concavity_index/static/images/auto/3d80c5f9b98a66ef667cbb5fb77d1a7e.png"></p>
+<p>The&nbsp;<i>convex hull</i>&nbsp;of a finite set of points in a 2D plane is the smallest convex polygon that contains all points in this set. For example, the convex hull of a set consisting of seven points whose Cartesian coordinates are:</p>
+<p>(-1, 3) (1, 2) (3, 1) (1, 1) (0, -1) (-2, 1) (-1, 2)</p>
+<p>is a polygon that has five vertices. When traversed clockwise, its vertices are:</p>
+<p>(-1, 3) (1, 2) (3, 1) (0, -1) (-2, 1)</p>
+<p><img width=460 height=398 src="Lessons_files/image022.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/polygon_concavity_index/static/images/auto/4eaef4a123926fef3c7f2d77529fce1f.png"></p>
+<p>If a polygon is concave (that is, it is not convex), it has a vertex which does not lie on its convex hull border. Your assignment is to find such a vertex.</p>
+<p>Assume that the following declarations are given:</p>
+<p>class Point2D { public int x; public int y; };</p>
+<p>Write a function:</p>
+<p>class Solution { public int solution(Point2D[] A); }</p>
+<p>that, given a non-empty zero-indexed array A consisting of N elements describing a polygon, returns &#8722;1 if the polygon is convex. Otherwise, the function should return the index of any point that doesn't belong to the convex hull border. Note that consecutive edges of the polygon may be collinear (that is, the polygon might have 180&#8722;degrees angles).</p>
+<p>To access the coordinates of the K-th point (where 0 &#8804; K &lt; N), use the following syntax:</p>
+<p> &nbsp; &diams; &nbsp; A[K].x&nbsp;to access the x-coordinate,</p>
+<p> &nbsp; &diams; &nbsp; A[K].y&nbsp;to access the y-coordinate.</p>
+<p>For example, given array A such that:</p>
+<p>A[0].x = -1 A[0].y = 3 A[1].x = 1 A[1].y = 2 A[2].x = 3 A[2].y = 1 A[3].x = 0 A[3].y = -1 A[4].x = -2 A[4].y = 1</p>
+<p>the function should return &#8722;1, as explained in the example above.</p>
+<p>However, given array A such that:</p>
+<p>A[0].x = -1 A[0].y = 3 A[1].x = 1 A[1].y = 2 A[2].x = 1 A[2].y = 1 A[3].x = 3 A[3].y = 1 A[4].x = 0 A[4].y = -1 A[5].x = -2 A[5].y = 1 A[6].x = -1 A[6].y = 2</p>
+<p>the function should return either 2 or 6. These are the indices of the polygon lying strictly in its convex hull (that is, not on the convex hull border).</p>
+<p><img width=460 height=398 src="Lessons_files/image023.png" alt="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/polygon_concavity_index/static/images/auto/db0266cc912d437defa8a5718bb0921a.png"></p>
+<p>Assume that:</p>
+<p> &nbsp; &diams; &nbsp; N is an integer within the range [3..10,000];</p>
+<p> &nbsp; &diams; &nbsp; the coordinates of each point in array A are integers within the range [&#8722;1,000,000,000..1,000,000,000];</p>
+<p> &nbsp; &diams; &nbsp; no two edges of the polygon A intersect, other than meeting at their endpoints;</p>
+<p> &nbsp; &diams; &nbsp; array A does not contain duplicate points.</p>
+<p>Complexity:</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case time complexity is O(N);</p>
+<p> &nbsp; &diams; &nbsp; expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</p>
+<p>Elements of input arrays can be modified.</p>
+
+
+</body>
+
+</html>
