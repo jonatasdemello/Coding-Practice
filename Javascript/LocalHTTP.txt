@@ -1,0 +1,55 @@
+
+First you must install NodeJS.
+Open the command prompt to run following commands.
+Windows 7: Open Start and write cmd into the search and press enter.
+Windows XP: Open Start and select Run and write cmd and press enter.
+
+Run this command to install a HTTP server: 
+	npm install http-server -g
+
+And start the HTTP server: 
+	http-server /path/to/docroot 
+
+with a path to the folder you want to share. 
+Your folder must have some files before it works.
+Now just open http://localhost:8080/ in your browser.
+
+
+If you have Node.Js setup then you can use http-server. 
+
+Just run: 
+	npm install http-server -g 
+and you will be able to use it in terminal like 
+	http-server C:\location\to\app.
+
+
+Go to your app directory
+Start SimpleHTTPServer
+
+In the terminal
+
+$ cd yourAngularApp
+~/yourAngularApp $ python -m SimpleHTTPServer
+Now, go to localhost:8000 in your browser and the page will show
+
+
+
+http://stackoverflow.com/questions/31328365/how-to-start-http-server-locally
+
+
+When you're running npm install in the project's root, it installs all of the npm dependencies into the project's node_modules directory.
+
+If you take a look at the project's node_modules directory, you should see a directory called http-server, which holds the http-server package, and a .bin folder, which holds the executable binaries from the installed dependencies. The .bin directory should have the http-server binary (or a link to it).
+
+So in your case, you should be able to start the http-server by running the following from your project's root directory (instead of npm start):
+
+./node_modules/.bin/http-server -a localhost -p 8000 -c-1
+This should have the same effect as running npm start.
+
+If you're running a Bash shell, you can simplify this by adding the ./node_modules/.bin folder to your $PATH environment variable:
+
+export PATH=./node_modules/.bin:$PATH
+This will put this folder on your path, and you should be able to simply run
+
+http-server -a localhost -p 8000 -c-1
+

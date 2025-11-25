@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="shared/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="quantity=1;cost=5">
+
+    <p>First Name: <input type="text" ng-model="firstName"></p>
+    <p>Last Name: <input type="text" ng-model="lastName"></p>
+
+    <p>Full Name: {{ firstName + " " + lastName }}</p>
+
+    <p>Total in dollar: {{ quantity * cost }}</p>
+
+    <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
+});
+</script>
+    
+</body>
+</html>

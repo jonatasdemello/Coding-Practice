@@ -1,5 +1,4 @@
 # Coding-Practice
-Some coding practices, challenges and interview tests.
 
-# javascript-practice
-Collection of JavaScript snippets, sample code blocks.
+A collection of code snippets, practices, challenges and interview tests in multiple languages.
+

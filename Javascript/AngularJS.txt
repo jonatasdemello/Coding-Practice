@@ -1,0 +1,282 @@
+AngularJS
+
+Angular QuickStart
+https://angular.io/docs/ts/latest/quickstart.html
+
+
+http://www.ng-newsletter.com/posts/how-to-learn-angular.html
+
+
+http://www.ng-newsletter.com/posts/beginner2expert-how_to_start.html
+http://www.ng-newsletter.com/posts/beginner2expert-scopes.html
+http://www.ng-newsletter.com/posts/beginner2expert-data-binding.html
+http://www.ng-newsletter.com/posts/beginner2expert-directives.html
+http://www.ng-newsletter.com/posts/beginner2expert-services.html
+http://www.ng-newsletter.com/posts/beginner2expert-config.html
+
+
+
+Angular
+https://github.com/tastejs/todomvc/tree/gh-pages/examples/angularjs
+
+	https://docs.angularjs.org/tutorial
+	https://www.codeschool.com/courses/shaping-up-with-angular-js
+	http://www.asp.net/single-page-application/overview/templates/breezeangular-template
+	http://www.asp.net/single-page-application/overview/introduction/other-libraries
+	http://briantford.com/blog/angular-yeoman
+	http://stephenplusplus.github.io/meangular/
+	
+	https://github.com/angular/angular-seed
+
+	http://meanjs.org/
+http://thejackalofjavascript.com/developing-a-mean-app-with-angular-2-0/
+http://ng-learn.org/2014/03/AngularJS-2-Status-Preview/
+
+
+Building a Single Page Application with ASP.NET and AngularJS
+http://channel9.msdn.com/Events/Build/2014/3-644
+
+
+
+
+Learn Angular:
+	http://www.yearofmoo.com/2012/08/use-angularjs-to-power-your-web-application.html
+	http://www.yearofmoo.com/2012/10/more-angularjs-magic-to-supercharge-your-webapp.html
+
+	http://www.codecademy.com/courses/javascript-advanced-en-2hJ3J/0/1
+
+	http://www.tutorialspoint.com/angularjs/index.htm
+	http://www.tutorialspoint.com/angularjs/angularjs_quick_guide.htm
+
+	https://thinkster.io/angulartutorial/a-better-way-to-learn-angularjs/
+	https://thinkster.io/mean-stack-tutorial/
+	
+	https://twitter.com/toddmotto
+	https://www.airpair.com/angularjs/posts/angularjs-tutorial
+	
+	http://www.ng-newsletter.com/posts/
+	http://www.ng-newsletter.com/posts/beginner2expert-how_to_start.html
+	
+	http://weblogs.asp.net/dwahlin/video-tutorial-angularjs-fundamentals-in-60-ish-minutes
+	http://weblogs.asp.net/dwahlin/learning-angularjs-by-example-the-customer-manager-application
+	
+	https://egghead.io/technologies/angularjs
+	
+	https://github.com/curran/portfolio
+	https://www.youtube.com/watch?v=TRrL5j3MIvo
+	https://www.youtube.com/watch?v=6J08m1H2BME
+	https://github.com/curran/screencasts/tree/gh-pages/introToAngular
+	
+	https://www.codeschool.com/courses/shaping-up-with-angular-js
+	
+
+AngularJS
+http://www.ng-newsletter.com/posts/beginner2expert-how_to_start.html
+http://www.w3schools.com/angular/angular_events.asp
+
+
+Building a Single Page Application with ASP.NET and AngularJS
+http://channel9.msdn.com/Events/Build/2014/3-644
+
+http://www.w3schools.com/angular/angular_controllers.asp
+
+http://conceptf1.blogspot.ca/2014/04/learning-angularjs-part2.html
+
+
+
+
+
+
+AngularJS extends HTML with ng-directives.
+
+The ng-app directive defines an AngularJS application.
+
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+
+The ng-bind directive binds application data to the HTML view.
+
+angular.module
+To define an AngularJS app, we first need to define an angular.module. An Angular module is simply a collection of functions that are run when the application is “booted.” 
+	
+var app = angular.module('myApp', []);
+
+
+Scopes
+A $scope is an object that ties a view (a DOM element) to the controller. In
+the Model-View-Controller structure, this $scope object becomes the model. It
+provides an execution context that is bound to the DOM element (and its children).
+
+Although it sounds complex, the $scope is just a JavaScript object. Both the
+controller and the view have access to the $scope so it can be used for
+communication between the two. This $scope object will house both the data
+and the functions that we’ll want to run in the view, as we’ll see.
+
+
+
+
+
+
+Bootstrap[edit]
+The tasks performed by the AngularJS bootstrapper occur in three phases[10] after the DOM has been loaded:
+
+Creation of a new Injector
+Compilation of the directives that decorate the DOM
+Linking of all directives to scope
+AngularJS directives allow the developer to specify custom and reusable HTML-like elements and attributes that define data bindings and the behavior of presentation components. Some of the most commonly used directives are:
+
+ng-app
+	Declares the root element of an AngularJS application, under which directives can be used to declare bindings and define behavior.
+ng-bind
+	Sets the text of a DOM element to the value of an expression. For example, <span ng-bind="name"></span> displays the value of ‘name’ inside the span element. Any change to the variable ‘name’ in the application's scope reflect instantly in the DOM.
+ng-model
+	Similar to ng-bind, but establishes a two-way data binding between the view and the scope.
+ng-model-options
+	Provides tuning for how model updates are done.
+ng-class
+	Lets class attributes be dynamically loaded.
+ng-controller
+	Specifies a JavaScript controller class that evaluates HTML expressions.
+ng-repeat
+	Instantiate an element once per item from a collection.
+ng-show & ng-hide
+	Conditionally show or hide an element, depending on the value of a boolean expression. Show and hide is achieved by setting the CSS display style.
+ng-switch
+	Conditionally instantiate one template from a set of choices, depending on the value of a selection expression.
+ng-view
+	The base directive responsible for handling routes that resolve JSON before rendering templates driven by specified controllers.
+ng-if
+	Basic if statement directive that allow to show the following element if the conditions are true. When the condition is false, the element is removed from the DOM. When true, a clone of the compiled element is re-inserted
+ng-aria
+	A module for accessibility support of common ARIA attributes.
+ng-animate
+	A module provides support for JavaScript, CSS3 transition and CSS3 keyframe animation hooks within existing core and custom directives.
+
+Since ng-* attributes are not valid in HTML specifications, data-ng-* can also be used as a prefix. For example, both ng-app and data-ng-app are valid in AngularJS.
+
+
+
+What did we just do? We wrote code to teach the browser a new HTML element <app-info>, and used it in the view to display each app's details.
+
+First in js/directives/appInfo.js, we made a new directive. 
+We used app.directive to create a new directive named 'appInfo'. 
+It returns an object with three options:
+ - restrict specifies how the directive will be used in the view. The 'E' means it will be used as a new HTML element.
+ - scope specifies that we will pass information into this directive through an attribute named info. 
+	The = tells the directive to look for an attribute named info in the <app-info> element, like this:
+	<app-info info="shutterbugg"></app-info>
+	The data in info becomes available to use in the template given by templateURL.
+- templateUrl specifies the HTML to use in order to display the data in scope.info. Here we use the HTML in js/directives/appInfo.html.
+
+Looking at js/directives/appInfo.html, we define the HTML to display details about an app, like its title and price. We use expressions and filters to display the data.
+
+Then in index.html we use the new directive as the HTML element <app-info>. We pass in objects from the controller's scope ($scope.shutterbugg) into the <app-info> element's info attribute so that it displays.
+
+Why is creating your own directives useful?
+
+Readability. Directives let you write expressive HTML. Looking at index.html you can understand the app's behavior just by reading the HTML.
+Reusability. Directives let you create self-contained units of functionality. We could easily plug in this directive into another AngularJS app and avoid writing a lot of repetitive HTML.
+
+
+We used app.directive to create a new directive named 'installApp'.
+
+The directive contains the three options restrict, scope, and templateUrl that we saw before in the 'appInfo' directive.
+It also contains a fourth option link. The link is used to create interactive directives that respond to user actions.
+The link function takes three inputs:
+
+scope refers to the directive's scope. Any new properties attached to $scope will become available to use in the directive's template.
+element refers to the directive's HTML element.
+attrs contains the element's attributes.
+Inside the link function, there are two properties buttonText and installed, and the function download(). We'll use these in the directive's template next.
+
+The template uses Angular's built-in ng-click directive. When the button is clicked, ng-click will tell AngularJS to run the download() function in the directive.
+
+The download() function uses the scope.installed property to check if an app is installed. When an app is installed, download() does three things:
+
+toggles the .btn-active class
+changes the button text to "Uninstall"
+changes scope.installed to true
+
+
+What can we generalize so far?
+
+Directives are a powerful way to create self-contained, interactive components. Unlike jQuery which adds interactivity as a layer on top of HTML, AngularJS treats interactivity as a native component of HTML.
+
+
+SERVICES
+So far we've made AngularJS apps by adding data to a controller, and then displaying it in a view.
+
+But what happens when the data contains hundreds of items, or if it's constantly changing like weather or financial data? Hardcoding data into a controller won't work anymore.
+
+A better solution is to read the live data from a server. We can do this by creating a service.
+
+https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json
+
+
+Well done! The city_name now shows up in the view. How does it work?
+
+First in js/services/forecast.js, we made a new service. We used app.factory to create a new service named forecast
+The forecast service needs to use AngularJS's built-in $http to fetch JSON from the server. Therefore, we add $http to the forecast service as a dependency, like this:
+ ['$http', function($http) {
+   // ...
+ }]
+Now $http is available to use inside forecast.
+Then, inside forecast, we use $http to construct an HTTP GET request for the weather data. If the request succeeds, the weather data is returned; otherwise the error info is returned.
+Next in the controller, we used the forecast service to fetch data from the server. First we added forecast into MainController as a dependency so that it's available to use. Then within the controller we used forecast to asynchronously fetch the weather data from the server and store it into $scope.fiveDay
+As before, any properties attached to $scope become available to use in the view. This means in index.html, we can display the city_name using an expression as done before.
+
+
+Why are services useful? Instead of filling the controller with code to fetch weather data from a server, it's better to move this independent logic into a service so that it can be reused by other parts of the app.
+
+What can we generalize so far?
+
+Directives are a way to make standalone UI components, like <app-info>
+Services are a way to make standalone communication logic, like forecast which fetches weather data from a server
+
+
+Great! A gallery of images shows up. How does it work?
+
+In app.js inside the app.config() method, we use Angular's $routeProvider to define the application routes.
+We used .when() to map the URL / to to the controller HomeController and the template home.html. The HomeController uses the service js/services/photos.js to fetch the array of all photos from https://s3.amazonaws.com/codecademy-content/courses/ltp4/photos-api/photos.json and stores it into $scope.photos. The home.html uses ng-repeat to loop through each item in the photos array and display each photo.
+Otherwise if a user accidentally visits a URL other than /, we just redirect to / using .otherwise().
+Now when a user visits /, a view will be constructed by injecting home.html into the <div ng-view></div> in index.html.
+
+var app = angular.module('GalleryApp', ['ngRoute']);
+app.config(function ($routeProvider){
+  $routeProvider
+  .when('/', {
+    controller: 'HomeController',
+    templateUrl: 'views/home.html'
+  })
+  .otherwise({
+    redirectTo: '/'
+  });
+});
+
+
+What did we just do?
+
+In app.js, we mapped a URL to PhotoController and photo.html. We added a variable part named id to the URL, like this: /photos/:id.
+In PhotoController, we used Angular's $routeParams to retrieve id from the URL by using $routeParams.id. Notice that we injected both $routeParams and the photos service into the PhotoController dependency array to make them available to use inside the controller.
+Then to fetch an individual photo, we first used the photos service to fetch the array of photos from the server, and then used $routeParams.id to access the specific photo by its index.
+As before, any properties attached to $scope become available to use in the view. This means in photo.html, we can display the photo's detail using expressions as done before.
+Notice that when you click on links, the app doesn't do a full reload. Only the part of the view specified by <div ng-view></div> changes.
+
+var app = angular.module('GalleryApp', ['ngRoute']);
+app.config(function ($routeProvider){
+  $routeProvider
+  .when('/', {
+    controller: 'HomeController',
+    templateUrl: 'views/home.html'
+  })
+  .when('/photos/:id', {
+    controller: 'PhotoController',
+    templateUrl: 'views/photo.html'
+  })
+  .otherwise({
+    redirectTo: '/'
+  });
+});
+
+
+
+*** https://github.com/hackreactor/intro-coding
